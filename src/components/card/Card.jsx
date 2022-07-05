@@ -1,16 +1,11 @@
 import React from 'react';
+import { Banner } from './banner/Banner';
 import './Card.scss';
 
 export const Card = ({ children }) => {
   return (
     <section id='card'>
-      <div id='banner'>
-        <div className='detail'>1</div>
-        <div className='linking-bar'></div>
-        <div className='detail'>2</div>
-        <div className='linking-bar'></div>
-        <div className='detail'>3</div>
-      </div>
+      <Banner />
       {children}
     </section>
   );
