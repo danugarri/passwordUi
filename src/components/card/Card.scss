@@ -1,0 +1,11 @@
+@import '../../styles/base.scss';
+
+#card {
+  background-color: $white;
+  height: 85vh;
+  width: 70vw;
+  position: relative;
+  top: 6rem;
+  margin: 0 auto;
+  box-shadow: $shadow;
+}

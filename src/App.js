@@ -5,12 +5,14 @@ import Step2 from './views/Form';
 import Step3 from './views/Feedback';
 import './App.scss';
 import { Header } from './components/header/Header';
+import { Card } from './components/card/Card';
 
 const App = () => {
   return (
     <div className='App'>
       <main className='App-content'>
         <Header />
+        <Card />
       </main>
     </div>
   );
