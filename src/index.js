@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './locales/i18next-config';
+import './config/i18n/i18n';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback='Loading translations'>
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );
