@@ -1,5 +1,6 @@
 {
   "app": {
-    "title": "Welcome to Open Bank"
+    "greeting": "Welcome to Open Bank",
+    "language": "Language"
   }
 }

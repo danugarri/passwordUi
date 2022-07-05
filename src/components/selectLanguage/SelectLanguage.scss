@@ -1,0 +1,18 @@
+.select-language {
+  position: absolute;
+  right: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+#greeting {
+  //   display: inline;
+  position: relative;
+  right: 4rem;
+}
+#language {
+  position: relative;
+  top: 1rem;
+}
+#language-label {
+  margin-right: 0.5rem;
+}
