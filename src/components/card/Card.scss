@@ -2,10 +2,37 @@
 
 #card {
   background-color: $white;
-  height: 85vh;
-  width: 70vw;
+  height: 80vh;
+  width: 60vw;
   position: relative;
   top: 6rem;
   margin: 0 auto;
   box-shadow: $shadow;
+}
+#banner {
+  background-color: rgb(193, 207, 207);
+  position: relative;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.detail {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgb(155, 163, 163);
+  color: $white;
+  text-align: center;
+  line-height: 1.8rem;
+  position: relative;
+  top: 40%;
+}
+.linking-bar {
+  position: relative;
+  top: 54%;
+  width: 3.1rem;
+  height: 0.2rem;
+  background-color: rgb(155, 163, 163);
+  margin: 0;
 }
