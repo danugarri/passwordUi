@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './config/i18n/i18n';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback='Loading translations'>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
