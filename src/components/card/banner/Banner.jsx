@@ -8,7 +8,7 @@ export const Banner = () => {
   const hover1 = useSelector((state) => state.stepsReducer.steps.hover1);
   const hover2 = useSelector((state) => state.stepsReducer.steps.hover2);
   const hover3 = useSelector((state) => state.stepsReducer.steps.hover3);
-  console.log(hover2);
+
   return (
     <section id='banner'>
       <div className='detail-container'>
