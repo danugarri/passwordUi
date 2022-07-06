@@ -21,7 +21,7 @@ export const Banner = () => {
         </div>
         {hover1 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
       </div>
-      <div className='linking-bar'></div>
+      <div className='linking-bar1'></div>
       <div className='detail-container'>
         <div
           className='detail'
@@ -35,7 +35,7 @@ export const Banner = () => {
         </div>
         {hover2 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
       </div>
-      <div className='linking-bar'></div>
+      <div className='linking-bar2'></div>
       <div className='detail-container'>
         <div
           className='detail'

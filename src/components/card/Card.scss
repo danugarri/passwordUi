@@ -23,6 +23,7 @@
 .detail {
   width: 2rem;
   height: 2rem;
+  margin: 0 2rem;
   border-radius: 50%;
   background-color: $bannerDetailsColor;
   color: $white;
@@ -35,10 +36,20 @@
     cursor: pointer;
   }
 }
-.linking-bar {
-  position: relative;
+.linking-bar1 {
+  position: absolute;
   top: 54%;
-  width: 3.1rem;
+  left: 27rem;
+  width: 4rem;
+  height: 0.2rem;
+  background-color: $bannerDetailsColor;
+  margin: 0;
+}
+.linking-bar2 {
+  position: absolute;
+  top: 54%;
+  left: 33rem;
+  width: 4rem;
   height: 0.2rem;
   background-color: $bannerDetailsColor;
   margin: 0;
@@ -47,5 +58,5 @@
   font-size: 90px;
   position: relative;
   top: 0.8rem;
-  right: 1rem;
+  left: 0.5rem;
 }
