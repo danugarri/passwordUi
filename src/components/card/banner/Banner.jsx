@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import { selectStepAction } from '../../../app/actions/selectStepAction';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
 
 export const Banner = () => {
-  const [hover1, setHover1] = useState(false);
-  const [hover2, setHover2] = useState(false);
-  const [hover3, setHover3] = useState(false);
-
+  const dispatch = useDispatch();
+  const hover1 = useSelector((state) => state.stepsReducer.steps.hover1);
+  const hover2 = useSelector((state) => state.stepsReducer.steps.hover2);
+  const hover3 = useSelector((state) => state.stepsReducer.steps.hover3);
+  console.log(hover2);
   return (
     <section id='banner'>
       <div className='detail-container'>
         <div
           className='detail'
           onClick={() => {
-            setHover1(true);
-            setHover2(false);
-            setHover3(false);
+            dispatch(selectStepAction(true, false, false));
           }}
         >
           1
@@ -26,9 +27,7 @@ export const Banner = () => {
         <div
           className='detail'
           onClick={() => {
-            setHover1(false);
-            setHover2(true);
-            setHover3(false);
+            dispatch(selectStepAction(false, true, false));
           }}
         >
           2
@@ -40,9 +39,7 @@ export const Banner = () => {
         <div
           className='detail'
           onClick={() => {
-            setHover1(false);
-            setHover2(false);
-            setHover3(true);
+            dispatch(selectStepAction(false, false, true));
           }}
         >
           3
