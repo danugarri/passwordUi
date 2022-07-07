@@ -11,6 +11,18 @@ export const ProductInformation = () => {
         <img alt='step1' src={step1} />
         <figcaption>{t('steps.step1.left')}</figcaption>
       </figure>
+      <article>
+        <p>{t('steps.step1.how.works.title')}</p>
+        <text>{t('steps.step1.how.works.descrip')}</text>
+      </article>
+      <article>
+        <p>{t('steps.step1.what.title')}</p>
+        <text>{t('steps.step1.what.descrip')}</text>
+      </article>
+      <div id='buttons-container'>
+        <button>{t('app.buttons.cancel')}</button>
+        <button>{t('app.buttons.next')}</button>
+      </div>
     </section>
   );
 };
