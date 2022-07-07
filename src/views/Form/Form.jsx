@@ -7,6 +7,7 @@ import { lengthPasswordAction } from '../../app/actions/lengthCounterAction';
 import { lengthSecondPasswordAction } from '../../app/actions/lengthCounterAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
+import { passwordValueAction } from '../../app/actions/passwordValueAction';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -18,16 +19,21 @@ export const Form = () => {
   );
   // Events handlers and dispatchers
   const handleHintLength = (e) => {
-    const typedText = e.target.value.length;
-    dispatch(lengthCounterAction(typedText, 'hintLength'));
+    const typedText = e.target.value;
+    const typedTextLength = e.target.value.length;
+    dispatch(lengthCounterAction(typedTextLength, 'hintLength'));
   };
-  const handlePasswordLength = (e) => {
-    const typedText = e.target.value.length;
-    dispatch(lengthPasswordAction(typedText, 'passwordLength'));
+  const handlePassword = (e) => {
+    const typedText = e.target.value;
+    const typedTextLength = e.target.value.length;
+    dispatch(passwordValueAction(typedText, 'passwordValue'));
+    dispatch(lengthPasswordAction(typedTextLength, 'passwordLength'));
   };
-  const handleSecondPasswordLength = (e) => {
-    const typedText = e.target.value.length;
-    dispatch(lengthSecondPasswordAction(typedText, 'secondPasswordLength'));
+  const handleSecondPassword = (e) => {
+    const typedText = e.target.value;
+    const typedTextLength = e.target.value.length;
+    dispatch(passwordValueAction(typedText, 'secondPasswordValue'));
+    dispatch(lengthSecondPasswordAction(typedTextLength, 'secondPasswordLength'));
   };
 
   return (
@@ -42,8 +48,7 @@ export const Form = () => {
             minLength='8'
             maxLength='24'
             type='password'
-            // value={passwordLength}
-            onChange={handlePasswordLength}
+            onChange={handlePassword}
             placeholder={t('step2.placeholder.1')}
           />
         </div>
@@ -55,7 +60,7 @@ export const Form = () => {
             maxLength='24'
             type='password'
             // value={seconPasswordLength}
-            onChange={handleSecondPasswordLength}
+            onChange={handleSecondPassword}
             placeholder={t('step2.placeholder.2')}
           />
         </div>
