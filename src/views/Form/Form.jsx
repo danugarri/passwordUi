@@ -25,17 +25,11 @@ export const Form = () => {
     const typedTextLength = e.target.value.length;
     dispatch(lengthCounterAction(typedTextLength, 'hintLength'));
   };
-  const handlePassword = (e) => {
+  const handlePassword = (e, valueType, lengthType) => {
     const typedText = e.target.value;
     const typedTextLength = e.target.value.length;
-    dispatch(passwordValueAction(typedText, 'passwordValue'));
-    dispatch(lengthCounterAction(typedTextLength, 'passwordLength'));
-  };
-  const handleSecondPassword = (e) => {
-    const typedText = e.target.value;
-    const typedTextLength = e.target.value.length;
-    dispatch(passwordValueAction(typedText, 'secondPasswordValue'));
-    dispatch(lengthCounterAction(typedTextLength, 'secondPasswordLength'));
+    dispatch(passwordValueAction(typedText, valueType));
+    dispatch(lengthCounterAction(typedTextLength, lengthType));
   };
 
   return (
@@ -50,7 +44,7 @@ export const Form = () => {
             minLength='8'
             maxLength='24'
             type='password'
-            onChange={handlePassword}
+            onChange={(e) => handlePassword(e, 'passwordValue', 'passwordLength')}
             placeholder={t('step2.placeholder.1')}
           />
         </div>
@@ -62,7 +56,7 @@ export const Form = () => {
             maxLength='24'
             type='password'
             // value={seconPasswordLength}
-            onChange={handleSecondPassword}
+            onChange={(e) => handlePassword(e, 'secondPasswordValue', 'secondPasswordLength')}
             placeholder={t('step2.placeholder.2')}
           />
         </div>
