@@ -3,8 +3,8 @@
     "greeting": "Bienvenido a Open Bank",
     "language": "Idioma",
     "buttons": {
-      "cancel": "Cancel",
-      "next": "Next"
+      "cancel": "Cancelar",
+      "next": "Siguiente"
     }
   },
   "steps": {
