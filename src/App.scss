@@ -40,10 +40,23 @@
 article {
   margin-top: 3rem;
   line-height: 14px;
+  color: $secondary-color;
 }
+// Buttons
 .buttons-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 6rem;
+  margin: 5.3rem auto;
+}
+.cancel-button {
+  border-style: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.next-button {
+  background-color: $secondary-color;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  color: $white;
 }

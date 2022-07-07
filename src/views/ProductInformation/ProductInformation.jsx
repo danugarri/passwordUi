@@ -20,8 +20,8 @@ export const ProductInformation = () => {
         <p>{t('steps.step1.what.descrip')}</p>
       </article>
       <div className='buttons-container'>
-        <button>{t('app.buttons.cancel')}</button>
-        <button>{t('app.buttons.next')}</button>
+        <button className='cancel-button'>{t('app.buttons.cancel')}</button>
+        <button className='next-button'>{t('app.buttons.next')}</button>
       </div>
     </section>
   );
