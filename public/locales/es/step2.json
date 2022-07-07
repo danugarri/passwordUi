@@ -9,7 +9,13 @@
       "hint": "Crea una pista para recordar tu Contraseña (opcional)"
     },
     "descriptions": {
-      "descr1": "También puedes crear una pista para recordar tu contraseña "
+      "descr1": "En primer lugar, debes crear una contraseña. No podrás recuperar tu contraseña. así que recuérdala bien.",
+      "descr2": "También puedes crear una pista para recordar tu contraseña "
+    },
+    "placeholder": {
+      "1": "Crea tu contraseña",
+      "2": "Repite tu contraseña",
+      "3": "Introduce tu pista"
     }
   }
 }

@@ -14,7 +14,7 @@
       "how": {
         "works": {
           "title": "How does it work",
-          "descrip": "First things first. You must create a password."
+          "descrip": "First things first, you must create a password. You will not be able to recover it, so that remember it well."
         }
       },
       "what": {

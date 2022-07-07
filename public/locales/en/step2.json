@@ -9,7 +9,13 @@
       "hint": "Create your hint in order to remember your password (optional)"
     },
     "descriptions": {
-      "descr1": "You can also create a hint in order to help you to remember your password "
+      "descr1": "First things first, you must create a password. You will not be able to recover it, so that remember it well.",
+      "descr2": "You can also create a hint in order to help you to remember your password "
+    },
+    "placeholder": {
+      "1": "Create your password",
+      "2": "Repeat your password",
+      "3": "Type your hint"
     }
   }
 }
