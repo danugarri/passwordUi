@@ -2,5 +2,21 @@
   "app": {
     "greeting": "Bienvenido a Open Bank",
     "language": "Idioma"
+  },
+  "steps": {
+    "step1": {
+      "header": " Crea tu Password Manager",
+      "left": "Almacena todas tus contraseñas, datos o cualquier ingormación. olvida las notas de papel y las apps no protegidas",
+      "how": {
+        "works": {
+          "title": "Cómo funciona",
+          "descrip": "En primer lugar, debes crear una contraseña"
+        }
+      },
+      "what": {
+        "title": "Qué datos puedes guardar",
+        "descrip": "Por ejemplo, el número de tu tarjeta de crédito, el PIN y el PUK de tu teléfono"
+      }
+    }
   }
 }

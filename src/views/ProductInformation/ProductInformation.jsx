@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const ProductInformation = () => {
-  return <div>ProductInformation</div>;
+  return <section>{t('steps.step1.header')}</section>;
 };
