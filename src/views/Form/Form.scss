@@ -14,3 +14,12 @@
   display: flex;
   flex-direction: column;
 }
+.hint-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.info-icon {
+  position: relative;
+  left: 0.2rem;
+}

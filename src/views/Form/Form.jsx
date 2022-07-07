@@ -6,6 +6,7 @@ import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -66,7 +67,11 @@ export const Form = () => {
       <section>
         <p>{t('step2.descriptions.descr2')}</p>
         <div className='block'>
-          <label className='header'>{t('step2.headers.hint')}</label>
+          <div className='hint-info-container'>
+            <label className='header'>{t('step2.headers.hint')}</label>
+            <InfoOutlinedIcon color='primary' className='info-icon' />
+          </div>
+
           <input
             id='hint-input'
             type='text'
