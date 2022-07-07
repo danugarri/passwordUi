@@ -20,7 +20,7 @@ export const Banner = () => {
         >
           1
         </div>
-        {step1 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step1 && <ArrowDropUpIcon className='arrow-icon' />}
       </div>
       <div className='linking-bar1'></div>
       <div className='detail-container'>
@@ -32,7 +32,7 @@ export const Banner = () => {
         >
           2
         </div>
-        {step2 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step2 && <ArrowDropUpIcon className='arrow-icon' />}
       </div>
       <div className='linking-bar2'></div>
       <div className='detail-container'>
@@ -44,7 +44,7 @@ export const Banner = () => {
         >
           3
         </div>
-        {step3 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step3 && <ArrowDropUpIcon className='arrow-icon' />}
       </div>
     </section>
   );

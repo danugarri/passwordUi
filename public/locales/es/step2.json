@@ -1,0 +1,15 @@
+{
+  "step2": {
+    "headers": {
+      "main": " Crea tu Password Manager",
+      "password": {
+        "left": "Crea tu Contraseña Maestra",
+        "right": "Repite tu Contraseña Maestra"
+      },
+      "hint": "Crea una pista para recordar tu Contraseña (opcional)"
+    },
+    "descriptions": {
+      "descr1": "También puedes crear una pista para recordar tu contraseña "
+    }
+  }
+}
