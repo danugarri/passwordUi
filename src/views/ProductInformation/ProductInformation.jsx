@@ -12,14 +12,14 @@ export const ProductInformation = () => {
         <figcaption>{t('steps.step1.left')}</figcaption>
       </figure>
       <article>
-        <p>{t('steps.step1.how.works.title')}</p>
-        <text>{t('steps.step1.how.works.descrip')}</text>
+        <p className='header'>{t('steps.step1.how.works.title')}</p>
+        <p>{t('steps.step1.how.works.descrip')}</p>
       </article>
       <article>
-        <p>{t('steps.step1.what.title')}</p>
-        <text>{t('steps.step1.what.descrip')}</text>
+        <p className='header'>{t('steps.step1.what.title')}</p>
+        <p>{t('steps.step1.what.descrip')}</p>
       </article>
-      <div id='buttons-container'>
+      <div className='buttons-container'>
         <button>{t('app.buttons.cancel')}</button>
         <button>{t('app.buttons.next')}</button>
       </div>
