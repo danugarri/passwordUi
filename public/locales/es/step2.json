@@ -16,6 +16,9 @@
       "1": "Crea tu contraseña",
       "2": "Repite tu contraseña",
       "3": "Introduce tu pista"
+    },
+    "errorHandler": {
+      "length": "Las contraseñas no coinciden"
     }
   }
 }

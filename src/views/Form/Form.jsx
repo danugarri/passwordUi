@@ -6,15 +6,17 @@ import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
 import { lengthPasswordAction } from '../../app/actions/lengthCounterAction';
 import { lengthSecondPasswordAction } from '../../app/actions/lengthCounterAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
   const dispatch = useDispatch();
   const hintLength = useSelector((state) => state.lengthCounterReducer.hintLength);
   const passwordLength = useSelector((state) => state.lengthCounterReducer.passwordLength);
-  const seconPasswordLength = useSelector(
+  const secondPasswordLength = useSelector(
     (state) => state.lengthCounterReducer.secondPasswordLength
   );
+  // Events handlers and dispatchers
   const handleHintLength = (e) => {
     const typedText = e.target.value.length;
     dispatch(lengthCounterAction(typedText, 'hintLength'));
@@ -27,10 +29,12 @@ export const Form = () => {
     const typedText = e.target.value.length;
     dispatch(lengthSecondPasswordAction(typedText, 'secondPasswordLength'));
   };
+
   return (
     <section className='steps-container'>
       <p className='password-manager'>{t('step2.headers.main')}</p>
       <p>{t('step2.descriptions.descr1')}</p>
+      {/*  Passwprd inputs section */}
       <section id='inputs-container'>
         <div className='block'>
           <p className='header'>{t('step2.headers.password.left')}</p>
@@ -45,6 +49,7 @@ export const Form = () => {
         </div>
         <div className='block'>
           <p className='header'>{t('step2.headers.password.right')}</p>
+          {/* input */}
           <input
             minLength='8'
             maxLength='24'
@@ -55,6 +60,9 @@ export const Form = () => {
           />
         </div>
       </section>
+      {/* error handler */}
+      <ErrorHandler passwordLength={passwordLength} secondPasswordLength={secondPasswordLength} />
+      {/* Hint input section*/}
       <section>
         <p>{t('step2.descriptions.descr2')}</p>
         <p className='header'>{t('step2.headers.hint')}</p>

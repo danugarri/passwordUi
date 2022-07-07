@@ -16,6 +16,9 @@
       "1": "Create your password",
       "2": "Repeat your password",
       "3": "Type your hint"
+    },
+    "errorHandler": {
+      "length": "Both password does not match"
     }
   }
 }
