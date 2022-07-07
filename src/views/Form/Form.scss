@@ -1,0 +1,12 @@
+#hint-input {
+  width: 100%;
+}
+#inputs-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.length-counter {
+  text-align: right;
+}

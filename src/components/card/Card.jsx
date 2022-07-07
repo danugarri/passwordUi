@@ -4,7 +4,7 @@ import './Card.scss';
 
 export const Card = ({ children }) => {
   return (
-    <section id='card'>
+    <section className='card'>
       <Banner />
       {children}
     </section>
