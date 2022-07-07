@@ -1,4 +1,6 @@
 export const types = {
   steps: '[SELECT STEP]',
-  length: '[LENGTH COUNTER] hint',
+  hintLength: '[LENGTH COUNTER] hint',
+  passwordLength: '[LENGTH COUNTER] password',
+  secondPasswordLength: '[LENGTH COUNTER] second password',
 };
