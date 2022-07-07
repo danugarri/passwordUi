@@ -71,9 +71,8 @@ export const Form = () => {
             <label className='header'>{t('step2.headers.hint')}</label>
             <InfoOutlinedIcon color='primary' className='info-icon' />
           </div>
-
           <input
-            id='hint-input'
+            className='hint-input'
             type='text'
             maxLength='255'
             onChange={(e) => handleInputs(e, null, 'hintLength')}
