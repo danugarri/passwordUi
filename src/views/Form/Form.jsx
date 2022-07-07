@@ -22,7 +22,6 @@ export const Form = () => {
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
   // Events handlers and dispatchers
   const handleHintLength = (e) => {
-    const typedText = e.target.value;
     const typedTextLength = e.target.value.length;
     dispatch(lengthCounterAction(typedTextLength, 'hintLength'));
   };
@@ -30,13 +29,13 @@ export const Form = () => {
     const typedText = e.target.value;
     const typedTextLength = e.target.value.length;
     dispatch(passwordValueAction(typedText, 'passwordValue'));
-    dispatch(lengthPasswordAction(typedTextLength, 'passwordLength'));
+    dispatch(lengthCounterAction(typedTextLength, 'passwordLength'));
   };
   const handleSecondPassword = (e) => {
     const typedText = e.target.value;
     const typedTextLength = e.target.value.length;
     dispatch(passwordValueAction(typedText, 'secondPasswordValue'));
-    dispatch(lengthSecondPasswordAction(typedTextLength, 'secondPasswordLength'));
+    dispatch(lengthCounterAction(typedTextLength, 'secondPasswordLength'));
   };
 
   return (

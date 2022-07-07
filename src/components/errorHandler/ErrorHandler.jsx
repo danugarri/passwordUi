@@ -14,9 +14,11 @@ export const ErrorHandler = ({
     <section>
       <p id='alert'>
         {/* When to display the error message */}
+        {/* Password does not match */}
         {passwordLength !== secondPasswordLength || secondPasswordValue !== passwordValue
           ? t('step2.errorHandler.length')
           : null}
+        {/* Password does not pass the requirements*/}
       </p>
     </section>
   );
