@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import { submitForm } from '../../services/api';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -35,8 +36,11 @@ export const Form = () => {
       {/*  Passwprd inputs section */}
       <section id='inputs-container'>
         <div className='block'>
-          <label className='header'>{t('step2.headers.password.left')}</label>
+          <label className='header' htmlFor='pass'>
+            {t('step2.headers.password.left')}
+          </label>
           <input
+            name='pass'
             minLength='8'
             maxLength='24'
             type='password'
@@ -45,9 +49,12 @@ export const Form = () => {
           />
         </div>
         <div className='block'>
-          <label className='header'>{t('step2.headers.password.right')}</label>
+          <label className='header' htmlFor='repass'>
+            {t('step2.headers.password.right')}
+          </label>
           {/* input */}
           <input
+            name='repass'
             minLength='8'
             maxLength='24'
             type='password'
@@ -68,10 +75,13 @@ export const Form = () => {
         <p>{t('step2.descriptions.descr2')}</p>
         <div className='block'>
           <div className='hint-info-container'>
-            <label className='header'>{t('step2.headers.hint')}</label>
+            <label className='header' htmlFor='hint'>
+              {t('step2.headers.hint')}
+            </label>
             <InfoOutlinedIcon color='primary' className='info-icon' />
           </div>
           <input
+            name='hint'
             className='hint-input'
             type='text'
             maxLength='255'
