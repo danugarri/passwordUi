@@ -20,15 +20,12 @@ export const Form = () => {
   );
   const passwordValue = useSelector((state) => state.passwordValueReducer.password);
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
-  // Events handlers and dispatchers
-  const handleHintLength = (e) => {
-    const typedTextLength = e.target.value.length;
-    dispatch(lengthCounterAction(typedTextLength, 'hintLength'));
-  };
-  const handlePassword = (e, valueType, lengthType) => {
+  // Events handler and dispatchers
+  const handleInputs = (e, valueType, lengthType) => {
     const typedText = e.target.value;
     const typedTextLength = e.target.value.length;
-    dispatch(passwordValueAction(typedText, valueType));
+    // if passed valueType
+    valueType && dispatch(passwordValueAction(typedText, valueType));
     dispatch(lengthCounterAction(typedTextLength, lengthType));
   };
 
@@ -44,7 +41,7 @@ export const Form = () => {
             minLength='8'
             maxLength='24'
             type='password'
-            onChange={(e) => handlePassword(e, 'passwordValue', 'passwordLength')}
+            onChange={(e) => handleInputs(e, 'passwordValue', 'passwordLength')}
             placeholder={t('step2.placeholder.1')}
           />
         </div>
@@ -56,7 +53,7 @@ export const Form = () => {
             maxLength='24'
             type='password'
             // value={seconPasswordLength}
-            onChange={(e) => handlePassword(e, 'secondPasswordValue', 'secondPasswordLength')}
+            onChange={(e) => handleInputs(e, 'secondPasswordValue', 'secondPasswordLength')}
             placeholder={t('step2.placeholder.2')}
           />
         </div>
@@ -76,7 +73,7 @@ export const Form = () => {
           id='hint-input'
           type='text'
           maxLength='255'
-          onChange={handleHintLength}
+          onChange={(e) => handleInputs(e, null, 'hintLength')}
           placeholder={t('step2.placeholder.3')}
         />
         <p className='length-counter'>{hintLength}/255</p>
