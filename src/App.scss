@@ -26,6 +26,7 @@
   }
 }
 // Shared
+
 .steps-container {
   padding: 1em 4rem;
 }
@@ -36,6 +37,7 @@
 .header {
   font-weight: 900;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 article {
   margin-top: 3rem;
@@ -63,4 +65,7 @@ article {
 // inputs
 input {
   padding: 0.8rem 0.6rem;
+  width: 250px;
+  margin: 0 10px;
+  float: left;
 }

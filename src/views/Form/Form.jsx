@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 import './Form.scss';
 import { Buttons } from '../../components/buttons/Buttons';
 import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
-import { lengthPasswordAction } from '../../app/actions/lengthCounterAction';
-import { lengthSecondPasswordAction } from '../../app/actions/lengthCounterAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
@@ -36,7 +34,7 @@ export const Form = () => {
       {/*  Passwprd inputs section */}
       <section id='inputs-container'>
         <div className='block'>
-          <p className='header'>{t('step2.headers.password.left')}</p>
+          <label className='header'>{t('step2.headers.password.left')}</label>
           <input
             minLength='8'
             maxLength='24'
@@ -46,13 +44,12 @@ export const Form = () => {
           />
         </div>
         <div className='block'>
-          <p className='header'>{t('step2.headers.password.right')}</p>
+          <label className='header'>{t('step2.headers.password.right')}</label>
           {/* input */}
           <input
             minLength='8'
             maxLength='24'
             type='password'
-            // value={seconPasswordLength}
             onChange={(e) => handleInputs(e, 'secondPasswordValue', 'secondPasswordLength')}
             placeholder={t('step2.placeholder.2')}
           />
@@ -68,14 +65,16 @@ export const Form = () => {
       {/* Hint input section*/}
       <section>
         <p>{t('step2.descriptions.descr2')}</p>
-        <p className='header'>{t('step2.headers.hint')}</p>
-        <input
-          id='hint-input'
-          type='text'
-          maxLength='255'
-          onChange={(e) => handleInputs(e, null, 'hintLength')}
-          placeholder={t('step2.placeholder.3')}
-        />
+        <div className='block'>
+          <label className='header'>{t('step2.headers.hint')}</label>
+          <input
+            id='hint-input'
+            type='text'
+            maxLength='255'
+            onChange={(e) => handleInputs(e, null, 'hintLength')}
+            placeholder={t('step2.placeholder.3')}
+          />
+        </div>
         <p className='length-counter'>{hintLength}/255</p>
       </section>
       <Buttons step1={false} step2={false} step3={true} />
