@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { submitForm } from '../../services/api';
+import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -32,9 +32,9 @@ export const Form = () => {
   return (
     <section className='steps-container'>
       <p className='password-manager'>{t('step2.headers.main')}</p>
-      <p>{t('step2.descriptions.descr1')}</p>
+      <label>{t('step2.descriptions.descr1')}</label>
       {/*  Passwprd inputs section */}
-      <section id='inputs-container'>
+      <form id='inputs-container' onSubmit={(e) => dispatch(getFormSubmission(e, passwordValue))}>
         <div className='block'>
           <label className='header' htmlFor='pass'>
             {t('step2.headers.password.left')}
@@ -62,36 +62,39 @@ export const Form = () => {
             placeholder={t('step2.placeholder.2')}
           />
         </div>
-      </section>
-      {/* error handler */}
-      <ErrorHandler
-        passwordLength={passwordLength}
-        secondPasswordLength={secondPasswordLength}
-        passwordValue={passwordValue}
-        secondPasswordValue={secondPasswordValue}
-      />
-      {/* Hint input section*/}
-      <section>
-        <p>{t('step2.descriptions.descr2')}</p>
-        <div className='block'>
-          <div className='hint-info-container'>
-            <label className='header' htmlFor='hint'>
-              {t('step2.headers.hint')}
-            </label>
-            <InfoOutlinedIcon color='primary' className='info-icon' />
+        {/* error handler */}
+        <ErrorHandler
+          passwordLength={passwordLength}
+          secondPasswordLength={secondPasswordLength}
+          passwordValue={passwordValue}
+          secondPasswordValue={secondPasswordValue}
+        />
+        {/* Hint input section*/}
+        <div>
+          <label>{t('step2.descriptions.descr2')}</label>
+          <div className='block'>
+            <div className='hint-info-container'>
+              <label className='header' htmlFor='hint'>
+                {t('step2.headers.hint')}
+              </label>
+              <InfoOutlinedIcon color='primary' className='info-icon' />
+            </div>
+            <input
+              name='hint'
+              className='hint-input'
+              type='text'
+              maxLength='255'
+              onChange={(e) => handleInputs(e, null, 'hintLength')}
+              placeholder={t('step2.placeholder.3')}
+            />
           </div>
-          <input
-            name='hint'
-            className='hint-input'
-            type='text'
-            maxLength='255'
-            onChange={(e) => handleInputs(e, null, 'hintLength')}
-            placeholder={t('step2.placeholder.3')}
-          />
+          <label className='length-counter'>{hintLength}/255</label>
         </div>
-        <p className='length-counter'>{hintLength}/255</p>
-      </section>
-      <Buttons step1={false} step2={false} step3={true} />
+        {/* <Buttons step1={false} step2={false} step3={true} /> */}
+        <button type='submit' onClick={(e) => dispatch(getFormSubmission(e, passwordValue))}>
+          Submit
+        </button>
+      </form>
     </section>
   );
 };
