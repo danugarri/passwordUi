@@ -12,11 +12,14 @@ import { passwordValueAction } from '../../app/actions/passwordValueAction';
 export const Form = () => {
   const { t } = useTranslation(['step2']);
   const dispatch = useDispatch();
+  // Redux store
   const hintLength = useSelector((state) => state.lengthCounterReducer.hintLength);
   const passwordLength = useSelector((state) => state.lengthCounterReducer.passwordLength);
   const secondPasswordLength = useSelector(
     (state) => state.lengthCounterReducer.secondPasswordLength
   );
+  const passwordValue = useSelector((state) => state.passwordValueReducer.password);
+  const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
   // Events handlers and dispatchers
   const handleHintLength = (e) => {
     const typedText = e.target.value;
@@ -66,7 +69,12 @@ export const Form = () => {
         </div>
       </section>
       {/* error handler */}
-      <ErrorHandler passwordLength={passwordLength} secondPasswordLength={secondPasswordLength} />
+      <ErrorHandler
+        passwordLength={passwordLength}
+        secondPasswordLength={secondPasswordLength}
+        passwordValue={passwordValue}
+        secondPasswordValue={secondPasswordValue}
+      />
       {/* Hint input section*/}
       <section>
         <p>{t('step2.descriptions.descr2')}</p>
