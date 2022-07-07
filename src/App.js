@@ -8,18 +8,18 @@ import { Card } from './components/card/Card';
 import { useSelector } from 'react-redux/es/exports';
 
 const App = () => {
-  const hover1 = useSelector((state) => state.stepsReducer.steps.hover1);
-  const hover2 = useSelector((state) => state.stepsReducer.steps.hover2);
-  const hover3 = useSelector((state) => state.stepsReducer.steps.hover3);
+  const step1 = useSelector((state) => state.stepsReducer.steps.step1);
+  const step2 = useSelector((state) => state.stepsReducer.steps.step2);
+  const step3 = useSelector((state) => state.stepsReducer.steps.step3);
 
   return (
     <div className='App'>
       <main className='App-content'>
         <Header />
         <Card>
-          {hover1 && <ProductInformation />}
-          {hover2 && <Form />}
-          {hover3 && <Feedback />}
+          {step1 && <ProductInformation />}
+          {step2 && <Form />}
+          {step3 && <Feedback />}
         </Card>
       </main>
     </div>

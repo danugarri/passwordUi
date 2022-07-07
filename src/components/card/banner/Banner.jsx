@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 
 export const Banner = () => {
   const dispatch = useDispatch();
-  const hover1 = useSelector((state) => state.stepsReducer.steps.hover1);
-  const hover2 = useSelector((state) => state.stepsReducer.steps.hover2);
-  const hover3 = useSelector((state) => state.stepsReducer.steps.hover3);
+  const step1 = useSelector((state) => state.stepsReducer.steps.step1);
+  const step2 = useSelector((state) => state.stepsReducer.steps.step2);
+  const step3 = useSelector((state) => state.stepsReducer.steps.step3);
 
   return (
     <section id='banner'>
@@ -20,7 +20,7 @@ export const Banner = () => {
         >
           1
         </div>
-        {hover1 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step1 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
       </div>
       <div className='linking-bar1'></div>
       <div className='detail-container'>
@@ -32,7 +32,7 @@ export const Banner = () => {
         >
           2
         </div>
-        {hover2 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step2 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
       </div>
       <div className='linking-bar2'></div>
       <div className='detail-container'>
@@ -44,7 +44,7 @@ export const Banner = () => {
         >
           3
         </div>
-        {hover3 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
+        {step3 && <ArrowDropUpIcon color='error' className='arrow-icon' />}
       </div>
     </section>
   );

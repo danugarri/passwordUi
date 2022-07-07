@@ -2,9 +2,9 @@ import { types } from '../types/types';
 
 const initialState = {
   steps: {
-    hover1: true,
-    hover2: false,
-    hover3: false,
+    step1: true,
+    step2: false,
+    step3: false,
   },
 };
 export const selectStepReducer = (state = initialState, action) => {

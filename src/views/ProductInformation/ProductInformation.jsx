@@ -1,14 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './ProductInformation.scss';
-import step1 from '../../assets/img/steps/step1.PNG';
+import step1Img from '../../assets/img/steps/step1.PNG';
+import { Buttons } from '../../components/buttons/Buttons';
+
 export const ProductInformation = () => {
   const { t } = useTranslation(['global']);
+
   return (
     <section className='steps-container'>
       <p className='password-manager'>{t('steps.step1.header')}</p>
       <figure>
-        <img alt='step1' src={step1} />
+        <img alt='step1' src={step1Img} />
         <figcaption>{t('steps.step1.left')}</figcaption>
       </figure>
       <article>
@@ -19,10 +22,7 @@ export const ProductInformation = () => {
         <p className='header'>{t('steps.step1.what.title')}</p>
         <p>{t('steps.step1.what.descrip')}</p>
       </article>
-      <div className='buttons-container'>
-        <button className='cancel-button'>{t('app.buttons.cancel')}</button>
-        <button className='next-button'>{t('app.buttons.next')}</button>
-      </div>
+      <Buttons step1={false} step2={true} step3={false} />
     </section>
   );
 };
