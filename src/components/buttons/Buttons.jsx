@@ -31,7 +31,7 @@ export const Buttons = ({ step1, step2, step3, final }) => {
           className='next-button'
           onClick={() => dispatch(selectStepAction(true, false, false))}
         >
-          {t('app.buttons.next')}
+          {t('app.buttons.finish')}
         </button>
       )}
     </>
@@ -42,4 +42,5 @@ Buttons.propTypes = {
   step1: PropTypes.bool,
   step2: PropTypes.bool,
   step3: PropTypes.bool,
+  final: PropTypes.bool,
 };

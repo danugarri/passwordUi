@@ -1,0 +1,8 @@
+{
+  "success": {
+    "header": "¡Your Password Manager is already created!"
+  },
+  "error": {
+    "header": "An error has been occurred"
+  }
+}

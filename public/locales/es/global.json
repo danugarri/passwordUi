@@ -4,7 +4,8 @@
     "language": "Idioma",
     "buttons": {
       "cancel": "Cancelar",
-      "next": "Siguiente"
+      "next": "Siguiente",
+      "finish": "Volver"
     }
   },
   "steps": {

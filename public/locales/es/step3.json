@@ -1,0 +1,10 @@
+{
+  "step3": {
+    "success": {
+      "header": "¡Tu Password Manager ya está creado!"
+    },
+    "error": {
+      "header": "Ha habido un  error"
+    }
+  }
+}

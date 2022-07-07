@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Buttons } from '../../components/buttons/Buttons';
 
 export const Feedback = ({ step3 }) => {
-  const { t } = useTranslation(['global']);
+  const { t } = useTranslation(['step3']);
   function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
@@ -25,7 +25,7 @@ export const Feedback = ({ step3 }) => {
   const useStyles = makeStyles((theme) => ({
     paper: {
       position: 'absolute',
-      width: 400,
+      width: 'fit-content',
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
@@ -51,15 +51,15 @@ export const Feedback = ({ step3 }) => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <section className='steps-container'>
-        <p className='password-manager'>{t('steps.step1.header')}</p>
-
-        <article>
-          <p className='header'>{t('steps.step1.what.title')}</p>
-          <p>{t('steps.step1.what.descrip')}</p>
-        </article>
-        <Buttons step1={false} step2={true} step3={false} final={true} />
+      {/* success */}
+      <section>
+        <p className='header'>{t('step3.success.header')}</p>
       </section>
+      {/* error */}
+      <section>
+        <p className='header'>{t('step3.error.header')}</p>
+      </section>
+      <Buttons step1={false} step2={true} step3={false} final={true} />
       <Feedback />
     </div>
   );
