@@ -7,7 +7,10 @@ export const ProductInformation = () => {
   return (
     <section className='steps-container'>
       <p className='password-manager'>{t('steps.step1.header')}</p>
-      <img alt='step1' src={step1} />
+      <figure>
+        <img alt='step1' src={step1} />
+        <figcaption>{t('steps.step1.left')}</figcaption>
+      </figure>
     </section>
   );
 };
