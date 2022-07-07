@@ -19,8 +19,9 @@ const App = () => {
         <Card>
           {step1 && <ProductInformation />}
           {step2 && <Form />}
-          {step3 && <Feedback />}
+          {step3 && <ProductInformation />}
         </Card>
+        <Feedback step3={step3} />
       </main>
     </div>
   );

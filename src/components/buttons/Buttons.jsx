@@ -4,25 +4,37 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
-export const Buttons = ({ step1, step2, step3 }) => {
+export const Buttons = ({ step1, step2, step3, final }) => {
   const { t } = useTranslation(['global']);
   const dispatch = useDispatch();
 
   return (
-    <div className='buttons-container'>
-      <button
-        className='cancel-button'
-        onClick={() => dispatch(selectStepAction(true, false, false))}
-      >
-        {t('app.buttons.cancel')}
-      </button>
-      <button
-        className='next-button'
-        onClick={() => dispatch(selectStepAction(step1, step2, step3))}
-      >
-        {t('app.buttons.next')}
-      </button>
-    </div>
+    <>
+      {!final ? (
+        <div className='buttons-container'>
+          <button
+            className='cancel-button'
+            onClick={() => dispatch(selectStepAction(true, false, false))}
+          >
+            {t('app.buttons.cancel')}
+          </button>
+
+          <button
+            className='next-button'
+            onClick={() => dispatch(selectStepAction(step1, step2, step3))}
+          >
+            {t('app.buttons.next')}
+          </button>
+        </div>
+      ) : (
+        <button
+          className='next-button'
+          onClick={() => dispatch(selectStepAction(true, false, false))}
+        >
+          {t('app.buttons.next')}
+        </button>
+      )}
+    </>
   );
 };
 
