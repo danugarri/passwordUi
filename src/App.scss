@@ -46,21 +46,18 @@ article {
   color: $secondary-color;
 }
 // Buttons
-
 .buttons-container {
   display: flex;
   flex-direction: row;
   // justify-content: space-between;
-  // margin: 0 auto;
+  margin: 0 25%;
   position: absolute;
-  bottom: 1.2rem;
-  width: 100%;
+  bottom: 2rem;
 }
 .cancel-button {
   border-style: none;
   font-weight: bold;
   cursor: pointer;
-  margin: 0 25%;
 }
 .next-button {
   background-color: $secondary-color;
