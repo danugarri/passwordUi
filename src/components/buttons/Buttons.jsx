@@ -32,6 +32,13 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction }) 
       {submit && (
         <div className='buttons-container'>
           <button
+            type='button'
+            className='cancel-button'
+            onClick={() => dispatch(selectStepAction(true, false, false))}
+          >
+            {t('app.buttons.cancel')}
+          </button>
+          <button
             className='next-button submit'
             type='submit'
             onClick={(e) => {
@@ -40,13 +47,6 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction }) 
             }}
           >
             {t('app.buttons.submit')}
-          </button>
-          <button
-            type='button'
-            className='cancel-button'
-            onClick={() => dispatch(selectStepAction(true, false, false))}
-          >
-            {t('app.buttons.cancel')}
           </button>
         </div>
       )}
