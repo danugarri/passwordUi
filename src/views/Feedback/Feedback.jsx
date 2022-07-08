@@ -4,9 +4,12 @@ import Modal from '@material-ui/core/Modal';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Buttons } from '../../components/buttons/Buttons';
+import PropTypes from 'prop-types';
 
-export const Feedback = ({ step3 }) => {
+export const Feedback = ({ step3, responseOk }) => {
+  // Translations
   const { t } = useTranslation(['step3']);
+  // styles
   function rand() {
     return Math.round(Math.random() * 20) - 10;
   }
@@ -32,11 +35,11 @@ export const Feedback = ({ step3 }) => {
       padding: theme.spacing(2, 4, 3),
     },
   }));
-
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
+  // states
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
+  // Open modal if it is the step3
   useEffect(() => {
     step3 ? handleOpen() : handleClose();
   }, [step3]);
@@ -52,13 +55,16 @@ export const Feedback = ({ step3 }) => {
   const body = (
     <div style={modalStyle} className={classes.paper}>
       {/* success */}
-      <section>
-        <p className='header'>{t('step3.success.header')}</p>
-      </section>
-      {/* error */}
-      <section>
-        <p className='header'>{t('step3.error.header')}</p>
-      </section>
+      {responseOk ? (
+        <section>
+          <p className='header'>{t('step3.success.header')}</p>
+        </section>
+      ) : (
+        <section>
+          {/* error */}
+          <p className='header'>{t('step3.error.header')}</p>
+        </section>
+      )}
       <Buttons step1={false} step2={true} step3={false} final={true} />
       <Feedback />
     </div>
@@ -76,4 +82,10 @@ export const Feedback = ({ step3 }) => {
       </Modal>
     </div>
   );
+};
+
+// Typing props
+Feedback.propTypes = {
+  step3: PropTypes.bool,
+  responseOk: PropTypes.number,
 };

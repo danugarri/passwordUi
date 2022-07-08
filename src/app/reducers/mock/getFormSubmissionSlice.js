@@ -3,6 +3,7 @@ import { submitForm } from '../../../services/api';
 
 const initialState = {
   status: null,
+  loading: false,
 };
 
 export const getFormSubmission = createAsyncThunk('[FORM]', async (e, passwordValue) => {
@@ -20,12 +21,14 @@ export const submitFormSlice = createSlice({
       .addMatcher(isPending(getFormSubmission), (state) => {
         return {
           ...state,
+          loading: true,
         };
       })
       .addMatcher(isFulfilled(getFormSubmission), (state, action) => {
         return {
           ...state,
           status: action.payload,
+          loading: false,
         };
       });
   },

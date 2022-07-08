@@ -8,6 +8,7 @@ import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { submitForm } from '../../services/api';
+import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -20,6 +21,7 @@ export const Form = () => {
   );
   const passwordValue = useSelector((state) => state.passwordValueReducer.password);
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
+  const responseOk = useSelector((state) => state.submitFormReducer.status);
   // Events handler and dispatchers
   const handleInputs = (e, valueType, lengthType) => {
     const typedText = e.target.value;
@@ -40,7 +42,7 @@ export const Form = () => {
       <p className='password-manager'>{t('step2.headers.main')}</p>
       <label>{t('step2.descriptions.descr1')}</label>
       {/*  Passwprd inputs section */}
-      <form id='inputs-container' onSubmit={(e) => getSubmission(e, passwordValue)}>
+      <form id='inputs-container' onSubmit={(e) => dispatch(getFormSubmission(e, passwordValue))}>
         <div className='block'>
           <label className='header' htmlFor='pass'>
             {t('step2.headers.password.left')}
@@ -101,7 +103,7 @@ export const Form = () => {
           step2={false}
           step3={true}
           submit={true}
-          submitFunction={(e) => getSubmission(e, passwordValue)}
+          submitFunction={(e) => dispatch(getFormSubmission(e, passwordValue))}
         />
       </form>
     </section>

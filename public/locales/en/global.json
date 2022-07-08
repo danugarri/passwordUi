@@ -5,7 +5,7 @@
     "buttons": {
       "cancel": "Cancel",
       "next": "Next",
-      "finish": "Return",
+      "finish": "Close",
       "submit": "Submit"
     }
   },

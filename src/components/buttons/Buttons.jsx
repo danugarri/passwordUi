@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
-export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, type }) => {
+export const Buttons = ({ step1, step2, step3, submit, final, submitFunction }) => {
   const { t } = useTranslation(['global']);
   const dispatch = useDispatch();
 
@@ -53,7 +53,7 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, ty
     </>
   );
 };
-
+//  Typing props
 Buttons.propTypes = {
   step1: PropTypes.bool,
   step2: PropTypes.bool,
