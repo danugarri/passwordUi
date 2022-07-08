@@ -30,16 +30,25 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction }) 
       )}
       {/* step2 */}
       {submit && (
-        <button
-          className='next-button'
-          type='submit'
-          onClick={(e) => {
-            submitFunction(e);
-            dispatch(selectStepAction(false, false, true));
-          }}
-        >
-          {t('app.buttons.submit')}
-        </button>
+        <div className='buttons-container'>
+          <button
+            className='next-button submit'
+            type='submit'
+            onClick={(e) => {
+              submitFunction(e);
+              dispatch(selectStepAction(false, false, true));
+            }}
+          >
+            {t('app.buttons.submit')}
+          </button>
+          <button
+            type='button'
+            className='cancel-button'
+            onClick={() => dispatch(selectStepAction(true, false, false))}
+          >
+            {t('app.buttons.cancel')}
+          </button>
+        </div>
       )}
       {/* step3 */}
       {final && !submit && (
