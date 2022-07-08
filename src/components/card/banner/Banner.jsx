@@ -37,10 +37,10 @@ export const Banner = () => {
       <div className='linking-bar2'></div>
       <div className='detail-container'>
         <div
-          className='detail'
-          onClick={() => {
-            dispatch(selectStepAction(false, false, true));
-          }}
+          className='detail3'
+          // onClick={() => {
+          //   dispatch(selectStepAction(false, false, true));
+          // }}
         >
           3
         </div>

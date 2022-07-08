@@ -35,6 +35,21 @@
     cursor: pointer;
   }
 }
+.detail3 {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 2rem;
+  border-radius: 50%;
+  background-color: $bannerDetailsColor;
+  color: $white;
+  text-align: center;
+  line-height: 1.8rem;
+  position: relative;
+  top: 40%;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
 .linking-bar1 {
   position: absolute;
   top: 54%;
