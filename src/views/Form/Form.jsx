@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { submitForm } from '../../services/api';
 import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 
 export const Form = () => {
@@ -21,7 +20,6 @@ export const Form = () => {
   );
   const passwordValue = useSelector((state) => state.passwordValueReducer.password);
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
-  const responseOk = useSelector((state) => state.submitFormReducer.status);
   // Events handler and dispatchers
   const handleInputs = (e, valueType, lengthType) => {
     const typedText = e.target.value;
@@ -29,12 +27,6 @@ export const Form = () => {
     // if passed valueType
     valueType && dispatch(passwordValueAction(typedText, valueType));
     dispatch(lengthCounterAction(typedTextLength, lengthType));
-  };
-  // async call
-  const getSubmission = async (e) => {
-    const response = await submitForm(e, passwordValue);
-
-    return response;
   };
 
   return (
