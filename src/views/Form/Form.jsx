@@ -30,7 +30,7 @@ export const Form = () => {
   };
 
   return (
-    <section className='steps-container'>
+    <section className='content-container'>
       <p className='password-manager'>{t('step2.headers.main')}</p>
       <label>{t('step2.descriptions.descr1')}</label>
       {/*  Passwprd inputs section */}

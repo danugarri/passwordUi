@@ -8,7 +8,7 @@ export const ProductInformation = () => {
   const { t } = useTranslation(['global']);
 
   return (
-    <section className='steps-container'>
+    <section className='content-container'>
       <p className='password-manager'>{t('steps.step1.header')}</p>
       <figure>
         <img alt='step1' src={step1Img} />

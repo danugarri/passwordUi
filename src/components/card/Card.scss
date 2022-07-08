@@ -4,8 +4,10 @@
   background-color: $white;
   width: 50vw;
   height: 95vh;
-  position: relative;
+  position: absolute;
   top: 6rem;
+  left: 25%;
+
   margin: 0 auto;
   box-shadow: $shadow;
 }
@@ -19,10 +21,16 @@
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px;
 }
+.steps-container {
+  display: flex;
+  flex-direction: row;
+  top: 1rem;
+  position: relative;
+}
 .detail {
   width: 2rem;
   height: 2rem;
-  margin: 0 2rem;
+  // margin: 0 2rem;
   border-radius: 50%;
   background-color: $bannerDetailsColor;
   color: $white;
@@ -38,7 +46,7 @@
 .detail3 {
   width: 2rem;
   height: 2rem;
-  margin: 0 2rem;
+  // margin: 0 2rem;
   border-radius: 50%;
   background-color: $bannerDetailsColor;
   color: $white;
@@ -50,28 +58,48 @@
     cursor: not-allowed;
   }
 }
+.block-container {
+  display: flex;
+  flex-direction: row;
+  z-index: 990;
+}
 .linking-bar1 {
-  position: absolute;
-  top: 54%;
-  left: 21.7rem;
+  position: relative;
+  top: 1rem;
+  // left: 21.7rem;
   width: 4.3rem;
   height: 0.2rem;
   background-color: $bannerDetailsColor;
   margin: 0;
+  z-index: 5;
 }
 .linking-bar2 {
-  position: absolute;
-  top: 54%;
-  left: 27.7rem;
+  position: relative;
+  top: 1rem;
+  // left: 21.7rem;
   width: 4.3rem;
   height: 0.2rem;
   background-color: $bannerDetailsColor;
   margin: 0;
 }
-.MuiSvgIcon-root.arrow-icon {
-  font-size: 90px;
-  position: relative;
-  top: 0.8rem;
-  left: 0.5rem;
+.MuiSvgIcon-root.arrow-icon1 {
+  font-size: 130px;
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  color: $white;
+}
+.MuiSvgIcon-root.arrow-icon2 {
+  font-size: 130px;
+  position: absolute;
+  top: 0.6rem;
+  right: 7rem;
+  color: $white;
+}
+.MuiSvgIcon-root.arrow-icon3 {
+  font-size: 130px;
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
   color: $white;
 }
