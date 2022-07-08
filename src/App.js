@@ -8,9 +8,11 @@ import { Card } from './components/card/Card';
 import { useSelector } from 'react-redux/es/exports';
 
 const App = () => {
+  // Redux store
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
   const step2 = useSelector((state) => state.stepsReducer.steps.step2);
   const step3 = useSelector((state) => state.stepsReducer.steps.step3);
+  // const responseOk= useSelector(state => state.)
 
   return (
     <div className='App'>

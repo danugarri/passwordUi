@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
-export const Buttons = ({ step1, step2, step3, final }) => {
+export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, type }) => {
   const { t } = useTranslation(['global']);
   const dispatch = useDispatch();
 
   return (
     <>
-      {!final ? (
+      {/* step1 */}
+      {!final && !submit && (
         <div className='buttons-container'>
           <button
             className='cancel-button'
@@ -26,7 +27,22 @@ export const Buttons = ({ step1, step2, step3, final }) => {
             {t('app.buttons.next')}
           </button>
         </div>
-      ) : (
+      )}
+      {/* step2 */}
+      {submit && (
+        <button
+          className='next-button'
+          type='submit'
+          onClick={(e) => {
+            submitFunction(e);
+            dispatch(selectStepAction(false, false, true));
+          }}
+        >
+          {t('app.buttons.submit')}
+        </button>
+      )}
+      {/* step3 */}
+      {final && !submit && (
         <button
           className='next-button'
           onClick={() => dispatch(selectStepAction(true, false, false))}
@@ -43,4 +59,6 @@ Buttons.propTypes = {
   step2: PropTypes.bool,
   step3: PropTypes.bool,
   final: PropTypes.bool,
+  submit: PropTypes.bool,
+  submitFunction: PropTypes.func,
 };

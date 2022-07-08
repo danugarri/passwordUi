@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
+import { submitForm } from '../../services/api';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -28,13 +28,19 @@ export const Form = () => {
     valueType && dispatch(passwordValueAction(typedText, valueType));
     dispatch(lengthCounterAction(typedTextLength, lengthType));
   };
+  // async call
+  const getSubmission = async (e) => {
+    const response = await submitForm(e, passwordValue);
+
+    return response;
+  };
 
   return (
     <section className='steps-container'>
       <p className='password-manager'>{t('step2.headers.main')}</p>
       <label>{t('step2.descriptions.descr1')}</label>
       {/*  Passwprd inputs section */}
-      <form id='inputs-container' onSubmit={(e) => dispatch(getFormSubmission(e, passwordValue))}>
+      <form id='inputs-container' onSubmit={(e) => getSubmission(e, passwordValue)}>
         <div className='block'>
           <label className='header' htmlFor='pass'>
             {t('step2.headers.password.left')}
@@ -90,10 +96,13 @@ export const Form = () => {
           </div>
           <label className='length-counter'>{hintLength}/255</label>
         </div>
-        {/* <Buttons step1={false} step2={false} step3={true} /> */}
-        <button type='submit' onClick={(e) => dispatch(getFormSubmission(e, passwordValue))}>
-          Submit
-        </button>
+        <Buttons
+          step1={false}
+          step2={false}
+          step3={true}
+          submit={true}
+          submitFunction={(e) => getSubmission(e, passwordValue)}
+        />
       </form>
     </section>
   );
