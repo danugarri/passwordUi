@@ -35,42 +35,44 @@ export const Form = () => {
       <label>{t('step2.descriptions.descr1')}</label>
       {/*  Passwprd inputs section */}
       <form id='inputs-container' onSubmit={(e) => dispatch(getFormSubmission(e, passwordValue))}>
-        <div className='block'>
-          <label className='header' htmlFor='pass'>
-            {t('step2.headers.password.left')}
-          </label>
-          <input
-            name='pass'
-            minLength='8'
-            maxLength='24'
-            type='password'
-            onChange={(e) => handleInputs(e, 'passwordValue', 'passwordLength')}
-            placeholder={t('step2.placeholder.1')}
+        <section className='password-section'>
+          <div className='block'>
+            <label className='header' htmlFor='pass'>
+              {t('step2.headers.password.left')}
+            </label>
+            <input
+              name='pass'
+              minLength='8'
+              maxLength='24'
+              type='password'
+              onChange={(e) => handleInputs(e, 'passwordValue', 'passwordLength')}
+              placeholder={t('step2.placeholder.1')}
+            />
+          </div>
+          <div className='block'>
+            <label className='header' htmlFor='repass'>
+              {t('step2.headers.password.right')}
+            </label>
+            {/* input */}
+            <input
+              name='repass'
+              minLength='8'
+              maxLength='24'
+              type='password'
+              onChange={(e) => handleInputs(e, 'secondPasswordValue', 'secondPasswordLength')}
+              placeholder={t('step2.placeholder.2')}
+            />
+          </div>
+          {/* error handler */}
+          <ErrorHandler
+            passwordLength={passwordLength}
+            secondPasswordLength={secondPasswordLength}
+            passwordValue={passwordValue}
+            secondPasswordValue={secondPasswordValue}
           />
-        </div>
-        <div className='block'>
-          <label className='header' htmlFor='repass'>
-            {t('step2.headers.password.right')}
-          </label>
-          {/* input */}
-          <input
-            name='repass'
-            minLength='8'
-            maxLength='24'
-            type='password'
-            onChange={(e) => handleInputs(e, 'secondPasswordValue', 'secondPasswordLength')}
-            placeholder={t('step2.placeholder.2')}
-          />
-        </div>
-        {/* error handler */}
-        <ErrorHandler
-          passwordLength={passwordLength}
-          secondPasswordLength={secondPasswordLength}
-          passwordValue={passwordValue}
-          secondPasswordValue={secondPasswordValue}
-        />
+        </section>
         {/* Hint input section*/}
-        <div>
+        <section className='hint-section'>
           <label>{t('step2.descriptions.descr2')}</label>
           <div className='block'>
             <div className='hint-info-container'>
@@ -89,7 +91,7 @@ export const Form = () => {
             />
           </div>
           <label className='length-counter'>{hintLength}/255</label>
-        </div>
+        </section>
         <Buttons
           step1={false}
           step2={false}

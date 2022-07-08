@@ -23,3 +23,50 @@
   position: relative;
   left: 0.2rem;
 }
+.hint-section {
+  position: absolute;
+  top: 65%;
+}
+.password-section {
+  position: absolute;
+  top: 35%;
+}
+
+//  Media queries
+
+@media only screen and (min-width: 300px) and (max-width: 860px) {
+  .hint-input {
+    width: 80%;
+  }
+  #inputs-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+  .length-counter {
+    text-align: right;
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+  }
+  .hint-info-container {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+
+  .info-icon {
+    position: relative;
+    margin-right: 3rem;
+  }
+  .hint-section {
+    position: relative;
+    top: 80%;
+  }
+  .password-section {
+    position: relative;
+    top: 50%;
+  }
+}

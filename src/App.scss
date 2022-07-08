@@ -1,6 +1,8 @@
 @import 'styles/base';
 
 .App {
+  margin: 0 auto;
+  height: 100vh;
   &-header {
     &-logo {
       max-width: 80px;
@@ -14,22 +16,11 @@
     p {
       color: $secondary-color;
     }
-    .bye-bye {
-      margin: 4rem 0 0;
-      text-align: center;
-      background: $terciary-color;
-      border: 1px solid #ddd;
-      color: #ababab;
-      padding: 1rem;
-      border-radius: 4px;
-    }
   }
 }
 // Shared
-
-.steps-container {
-  padding: 1em 4rem;
-  height: 95vh;
+figure {
+  margin: 0 auto;
 }
 .password-manager {
   font-size: 1.55rem;
@@ -49,7 +40,7 @@ article {
 .buttons-container {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
+  justify-content: space-between;
   margin: 0 25%;
   position: absolute;
   bottom: 2rem;
@@ -65,14 +56,76 @@ article {
   cursor: pointer;
   color: $white;
 }
-// .submit {
-//   position: absolute;
-//   bottom: 5rem;
-// }
+
 // inputs
 input {
   padding: 0.8rem 0.6rem;
   width: 250px;
   margin: 0 40px 0 0;
   float: left;
+}
+
+// Media queries
+@media only screen and (min-width: 300px) and (max-width: 860px) {
+  .App {
+    &-header {
+      &-logo {
+        max-width: 10px;
+      }
+    }
+    &-content {
+      padding: 1rem 4rem;
+      h3 {
+        color: $primary-color;
+      }
+      p {
+        color: $secondary-color;
+      }
+    }
+  }
+  // Shared
+
+  .steps-container {
+    padding: 1em 4rem;
+  }
+  .password-manager {
+    font-size: 1.2rem;
+    font-weight: 900;
+  }
+  .header {
+    font-weight: 900;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  article {
+    margin-top: 1rem;
+    line-height: 1rem;
+    color: $secondary-color;
+  }
+  // Buttons
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 60px;
+  }
+  .cancel-button {
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .next-button {
+    background-color: $secondary-color;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    color: $white;
+  }
+
+  // inputs
+  input {
+    padding: 0.6rem 0.6rem;
+    width: 11rem;
+    margin: 0 2px 0 0;
+  }
 }

@@ -3,11 +3,11 @@
 .card {
   background-color: $white;
   width: 50vw;
-  height: 95vh;
+  height: 86%;
   position: absolute;
   top: 6rem;
   left: 25%;
-
+  text-align: left;
   margin: 0 auto;
   box-shadow: $shadow;
 }
@@ -26,11 +26,11 @@
   flex-direction: row;
   top: 1rem;
   position: relative;
+  height: fit-content;
 }
 .detail {
   width: 2rem;
   height: 2rem;
-  // margin: 0 2rem;
   border-radius: 50%;
   background-color: $bannerDetailsColor;
   color: $white;
@@ -46,7 +46,6 @@
 .detail3 {
   width: 2rem;
   height: 2rem;
-  // margin: 0 2rem;
   border-radius: 50%;
   background-color: $bannerDetailsColor;
   color: $white;
@@ -66,17 +65,14 @@
 .linking-bar1 {
   position: relative;
   top: 1rem;
-  // left: 21.7rem;
   width: 4.3rem;
   height: 0.2rem;
   background-color: $bannerDetailsColor;
   margin: 0;
-  z-index: 5;
 }
 .linking-bar2 {
   position: relative;
   top: 1rem;
-  // left: 21.7rem;
   width: 4.3rem;
   height: 0.2rem;
   background-color: $bannerDetailsColor;
@@ -102,4 +98,108 @@
   top: 0.6rem;
   right: 1rem;
   color: $white;
+}
+// Media queries
+@media only screen and (min-width: 300px) and (max-width: 860px) {
+  .card {
+    background-color: $white;
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 6rem;
+    left: 25%;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+  #banner {
+    background-color: rgb(193, 207, 207);
+    position: relative;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  }
+  .steps-container {
+    display: flex;
+    flex-direction: row;
+    top: 1rem;
+    position: relative;
+  }
+  .detail {
+    width: 2rem;
+    height: 2rem;
+    // margin: 0 2rem;
+    border-radius: 50%;
+    background-color: $bannerDetailsColor;
+    color: $white;
+    text-align: center;
+    line-height: 1.8rem;
+    position: relative;
+    top: 40%;
+    &:hover {
+      background-color: rgb(8, 54, 54);
+      cursor: pointer;
+    }
+  }
+  .detail3 {
+    width: 2rem;
+    height: 2rem;
+    // margin: 0 2rem;
+    border-radius: 50%;
+    background-color: $bannerDetailsColor;
+    color: $white;
+    text-align: center;
+    line-height: 1.8rem;
+    position: relative;
+    top: 40%;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+  .block-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .linking-bar1 {
+    position: relative;
+    top: 1rem;
+    width: 4.3rem;
+    height: 0.2rem;
+    background-color: $bannerDetailsColor;
+    margin: 0;
+  }
+  .linking-bar2 {
+    position: relative;
+    top: 1rem;
+    width: 4.3rem;
+    height: 0.2rem;
+    background-color: $bannerDetailsColor;
+    margin: 0;
+  }
+  .MuiSvgIcon-root.arrow-icon1 {
+    font-size: 130px;
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    color: $white;
+  }
+  .MuiSvgIcon-root.arrow-icon2 {
+    font-size: 130px;
+    position: absolute;
+    top: 0.6rem;
+    right: 7rem;
+    color: $white;
+  }
+  .MuiSvgIcon-root.arrow-icon3 {
+    font-size: 130px;
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+    color: $white;
+  }
+  .step1-img {
+    width: 200px;
+  }
 }

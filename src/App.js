@@ -18,18 +18,17 @@ const App = () => {
 
   return (
     <div className='App'>
-      <main className='App-content'>
-        <Header />
-        {/* iF loading not to render */}
-        {!loading && (
-          <Card>
-            {step1 && <ProductInformation />}
-            {step2 && <Form />}
-            {step3 && <ProductInformation />}
-          </Card>
-        )}
-        {!loading ? <Feedback step3={step3} responseOk={responseOk} /> : <Spinner />}
-      </main>
+      <Header />
+
+      {/* iF loading not to render */}
+      {!loading && (
+        <Card>
+          {step1 && <ProductInformation />}
+          {step2 && <Form />}
+          {step3 && <ProductInformation />}
+        </Card>
+      )}
+      {!loading ? <Feedback step3={step3} responseOk={responseOk} /> : <Spinner />}
     </div>
   );
 };
