@@ -12,7 +12,7 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction }) 
     <>
       {/* step1 */}
       {!final && !submit && (
-        <div className='buttons-container'>
+        <div className='buttons-container-step1'>
           <button
             className='cancel-button'
             onClick={() => dispatch(selectStepAction(true, false, false))}
