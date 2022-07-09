@@ -15,7 +15,7 @@ export const useCheck = (password, secondPassword) => {
       password === secondPassword && password.length === secondPassword.length;
     const passwordsNotEmpty = password !== '' && secondPassword !== '';
     // REGEX
-    const fullPattern = /[A-Za-z0-9]{8,24}[A-Z]+[0-9]+/;
+    const fullPattern = /[A-Za-z0-9]{8,24}/;
     //checking expression
     const checkedExpression = fullPattern.test(password);
     // Conditions
