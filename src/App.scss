@@ -41,15 +41,16 @@ article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 25%;
+  // margin: 0 25%;
   position: absolute;
-  bottom: 2rem;
+  bottom: 7rem;
+  width: 44vw;
 }
 .buttons-container-step1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  top: 1rem;
+  top: 3rem;
   position: relative;
 }
 .cancel-button {
