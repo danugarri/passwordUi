@@ -5,25 +5,12 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Buttons } from '../../components/buttons/Buttons';
 import PropTypes from 'prop-types';
+import { modalStyle } from './feedbackConsts';
 
 export const Feedback = ({ step3, responseOk }) => {
   // Translations
   const { t } = useTranslation(['step3']);
   // styles
-  function rand() {
-    return Math.round(Math.random() * 20) - 10;
-  }
-
-  function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
-
-    return {
-      top: `${top}%`,
-      left: `${left}%`,
-      transform: `translate(-${top}%, -${left}%)`,
-    };
-  }
 
   const useStyles = makeStyles((theme) => ({
     paper: {
@@ -36,14 +23,13 @@ export const Feedback = ({ step3, responseOk }) => {
     },
   }));
   const classes = useStyles();
-  // states
-  const [modalStyle] = useState(getModalStyle);
+  // Open Modal state
   const [open, setOpen] = useState(false);
   // Open modal if it is the step3
   useEffect(() => {
     step3 ? handleOpen() : handleClose();
   }, [step3]);
-
+  //  Handling Modal
   const handleOpen = () => {
     setOpen(true);
   };
@@ -51,7 +37,7 @@ export const Feedback = ({ step3, responseOk }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  // Modal body
   const body = (
     <div style={modalStyle} className={classes.paper}>
       {/* success */}
