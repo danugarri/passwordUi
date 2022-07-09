@@ -1,12 +1,12 @@
 // without options
-{"plugins": ["transform-class-properties"]}
+{ "plugins": ["transform-class-properties"] }
 // with options
-{
-  "plugins": [
-    [
-      "transform-class-properties", {
-      "spec": true
-    }
-    ]
-  ]
-}
+// {
+//   "plugins": [
+//     [
+//       "transform-class-properties", {
+//       "spec": true
+//     }
+//     ]
+//   ]
+// }
