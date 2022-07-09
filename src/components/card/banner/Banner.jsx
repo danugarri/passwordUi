@@ -9,8 +9,9 @@ export const Banner = () => {
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
   const step2 = useSelector((state) => state.stepsReducer.steps.step2);
   const step3 = useSelector((state) => state.stepsReducer.steps.step3);
-  const detailStyle1 = step2 || step3 ? 'passed' : 'detail';
-  const detailStyle2 = step3 ? 'passed' : 'detail';
+  // Handling banner details style
+  const detailStyle1 = step2 || step3 ? 'passed' : '';
+  const detailStyle2 = step3 ? 'passed' : '';
 
   return (
     <section id='banner'>
@@ -19,14 +20,14 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className={detailStyle1}
+              className={`detail ${detailStyle1}`}
               onClick={() => {
                 dispatch(selectStepAction(true, false, false));
               }}
             >
               1
             </div>
-            <div className='linking-bar1'></div>
+            <div className={`linking-bar1 ${detailStyle1}`}></div>
           </div>
           {step1 && <ArrowDropUpIcon className='arrow-icon1' />}
         </div>
@@ -34,14 +35,14 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className={detailStyle2}
+              className={`detail ${detailStyle2}`}
               onClick={() => {
                 dispatch(selectStepAction(false, true, false));
               }}
             >
               2
             </div>
-            <div className='linking-bar1'></div>
+            <div className={`linking-bar1 ${detailStyle2}`}></div>
           </div>
           {step2 && <ArrowDropUpIcon className='arrow-icon2' />}
         </div>
