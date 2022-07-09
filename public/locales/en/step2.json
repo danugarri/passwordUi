@@ -19,7 +19,8 @@
     },
     "errorHandler": {
       "length": "Both password does not match",
-      "lengthRequested": "Min 8 characters - Max 24 characters"
+      "lengthRequested": "Min 8 characters - Max 24 characters.",
+      "pattern": "At least an upper case letter and a number"
     }
   }
 }

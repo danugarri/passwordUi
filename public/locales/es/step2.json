@@ -19,7 +19,8 @@
     },
     "errorHandler": {
       "length": "Las contraseñas no coinciden",
-      "lengthRequested": "Min 8 caracteres - Max 24 caracteres"
+      "lengthRequested": "Min 8 caracteres - Max 24 caracteres.",
+      "pattern": "Al menos una letra mayúscula y un número"
     }
   }
 }
