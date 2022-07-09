@@ -7,8 +7,14 @@ export const useCheck = (password, secondPassword) => {
     const passwordMatches =
       password === secondPassword && password.length === secondPassword.length;
     const passwordsNotEmpty = password !== '' && secondPassword !== '';
+    // REGEX
+    //checking expression
+    const regularExpression = /[a-z-0-9]+@([a-z])+\.[a-z]+/;
+    const checkedExpression = regularExpression.test(password);
     // Conditions
-    passwordMatches && passwordsNotEmpty ? setDisabled(false) : setDisabled(true);
+    passwordMatches && passwordsNotEmpty && checkedExpression
+      ? setDisabled(false)
+      : setDisabled(true);
   }, [password, secondPassword]);
   return [disabled];
 };
