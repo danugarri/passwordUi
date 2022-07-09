@@ -38,8 +38,52 @@
 }
 
 //  Media queries
-
+//  Break point 1
 @media only screen and (min-width: 300px) and (max-width: 860px) {
+  .hint-input {
+    width: 80%;
+  }
+  #inputs-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+  .length-counter {
+    text-align: right;
+    position: relative;
+    margin: 0 auto;
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+  }
+  .hint-info-container {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+  }
+
+  .info-icon {
+    position: relative;
+    margin-right: 3rem;
+  }
+  .hint-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 90%;
+  }
+  .password-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 50%;
+  }
+}
+// Break point 2
+@media only screen and (min-width: 860px) and (max-width: 1260px) {
   .hint-input {
     width: 80%;
   }

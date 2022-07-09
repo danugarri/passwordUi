@@ -155,3 +155,15 @@ input {
     margin: 0 2px 0 0;
   }
 }
+
+// Break point 2
+@media only screen and (min-width: 860px) and (max-width: 1260px) {
+  // Buttons
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 150px;
+  }
+}
