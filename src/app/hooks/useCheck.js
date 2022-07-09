@@ -23,5 +23,6 @@ export const useCheck = (password, secondPassword) => {
       ? setDisabled(false)
       : setDisabled(true);
   }, [password, secondPassword]);
+
   return [disabled];
 };
