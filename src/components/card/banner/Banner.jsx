@@ -13,6 +13,10 @@ export const Banner = () => {
   // Handling banner details style
   const detailStyle1 = step2 || step3 ? 'passed' : '';
   const detailStyle2 = step3 ? 'passed' : '';
+  const activeStep1 = step1 ? 'active' : '';
+  const activeStep2 = step2 ? 'active' : '';
+  const activeStep3 = step3 ? 'active' : '';
+
   // Handling user steps
   const checkStyle1 = step2 || step3 ? <CheckIcon className='check-icon' /> : 1;
   const checkStyle2 = step3 ? <CheckIcon className='check-icon' /> : 2;
@@ -24,7 +28,7 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className={`detail ${detailStyle1}`}
+              className={`detail ${detailStyle1} ${activeStep1}`}
               onClick={() => {
                 dispatch(selectStepAction(true, false, false));
               }}
@@ -39,7 +43,7 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className={`detail ${detailStyle2}`}
+              className={`detail ${detailStyle2} ${activeStep2}`}
               onClick={() => {
                 dispatch(selectStepAction(false, true, false));
               }}
@@ -53,7 +57,7 @@ export const Banner = () => {
         {/* step3 */}
         <div className='detail-container'>
           <div className='block-container'>
-            <div className='detail3'>3</div>
+            <div className={`detail3 ${activeStep3}`}>3</div>
           </div>
           {step3 && <ArrowDropUpIcon className='arrow-icon3' />}
         </div>
