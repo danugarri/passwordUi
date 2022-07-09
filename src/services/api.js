@@ -3,7 +3,7 @@ const PRUEBA_KO = 'pruebaKO123';
 const RESPONSE_OK = { status: 200 };
 const RESPONSE_KO = { status: 401 };
 
-const submitForm = (e, pass, repass, optionalQuestion) => {
+const submitForm = (e, pass) => {
   e.preventDefault();
   e.persist();
   return new Promise((resolve, reject) =>

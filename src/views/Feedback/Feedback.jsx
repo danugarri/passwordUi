@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { Buttons } from '../../components/buttons/Buttons';
 import PropTypes from 'prop-types';
 import { modalStyle } from './feedbackConsts';
+import './Feedback.scss';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import ReportProblemOutlinedIcon from '@material-ui/icons/ReportProblemOutlined';
 
 export const Feedback = ({ step3, responseOk }) => {
   // Translations
@@ -42,12 +45,18 @@ export const Feedback = ({ step3, responseOk }) => {
     <div style={modalStyle} className={classes.paper}>
       {/* success */}
       {responseOk ? (
-        <section>
+        <section className='modal-content'>
+          <CheckCircleOutlineIcon
+            style={{ color: 'rgb(20, 216, 20)' }}
+            fontSize='large'
+            className='feedback-icon'
+          />
           <p className='header'>{t('step3.success.header')}</p>
         </section>
       ) : (
-        <section>
+        <section className='modal-content'>
           {/* error */}
+          <ReportProblemOutlinedIcon color='error' fontSize='large' className='feedback-icon' />
           <p className='header'>{t('step3.error.header')}</p>
         </section>
       )}
