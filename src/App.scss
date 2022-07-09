@@ -121,8 +121,17 @@ input {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    margin-top: 60px;
+    margin-top: 150px;
   }
+
+  .buttons-container-step1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 3rem;
+    position: relative;
+  }
+
   .cancel-button {
     border-style: none;
     font-weight: bold;

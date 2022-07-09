@@ -23,6 +23,7 @@
 .info-icon {
   position: relative;
   left: 0.2rem;
+  top: 0.8rem;
 }
 .hint-section {
   position: absolute;
@@ -49,6 +50,8 @@
   }
   .length-counter {
     text-align: right;
+    position: relative;
+    margin: 0 auto;
   }
   .block {
     display: flex;
@@ -66,10 +69,15 @@
   }
   .hint-section {
     position: relative;
-    top: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 90%;
   }
   .password-section {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
     top: 50%;
   }
 }
