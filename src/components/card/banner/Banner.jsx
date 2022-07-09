@@ -9,7 +9,7 @@ export const Banner = () => {
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
   const step2 = useSelector((state) => state.stepsReducer.steps.step2);
   const step3 = useSelector((state) => state.stepsReducer.steps.step3);
-  const detailStyle1 = step2 ? 'passed' : 'detail';
+  const detailStyle1 = step2 || step3 ? 'passed' : 'detail';
   const detailStyle2 = step3 ? 'passed' : 'detail';
 
   return (
