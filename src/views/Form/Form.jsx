@@ -23,6 +23,8 @@ export const Form = () => {
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
   // Disabled button state
   const [disabled] = useCheck(passwordValue, secondPasswordValue);
+  // next BUTTON COLOR
+  const nextButtonStyle = disabled ? 'disabled-button' : 'next-button';
   // Events handler and dispatchers
   const handleInputs = (e, valueType, lengthType) => {
     const typedText = e.target.value;
@@ -102,6 +104,7 @@ export const Form = () => {
           submit={true}
           submitFunction={(e) => dispatch(getFormSubmission(e, passwordValue))}
           disabled={disabled}
+          nextButtonStyle={nextButtonStyle}
         />
       </form>
     </section>

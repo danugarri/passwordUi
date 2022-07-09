@@ -6,7 +6,16 @@ import PropTypes from 'prop-types';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
 
-export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, disabled }) => {
+export const Buttons = ({
+  step1,
+  step2,
+  step3,
+  submit,
+  final,
+  submitFunction,
+  disabled,
+  nextButtonStyle,
+}) => {
   const { t } = useTranslation(['global']);
   const dispatch = useDispatch();
 
@@ -49,7 +58,7 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, di
             {t('app.buttons.cancel')}
           </button>
           <button
-            className='next-button'
+            className={nextButtonStyle}
             type='submit'
             disabled={disabled}
             onClick={(e) => {
@@ -90,4 +99,5 @@ Buttons.propTypes = {
   submit: PropTypes.bool,
   submitFunction: PropTypes.func,
   disabled: PropTypes.bool,
+  nextButtonStyle: PropTypes.string,
 };
