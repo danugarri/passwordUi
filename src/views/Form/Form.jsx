@@ -8,6 +8,7 @@ import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
+import { useCheck } from '../../app/hooks/useCheck';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -20,6 +21,8 @@ export const Form = () => {
   );
   const passwordValue = useSelector((state) => state.passwordValueReducer.password);
   const secondPasswordValue = useSelector((state) => state.passwordValueReducer.secondPassword);
+  // Disabled button state
+  const [disabled] = useCheck(passwordValue, secondPasswordValue);
   // Events handler and dispatchers
   const handleInputs = (e, valueType, lengthType) => {
     const typedText = e.target.value;
@@ -98,6 +101,7 @@ export const Form = () => {
           step3={true}
           submit={true}
           submitFunction={(e) => dispatch(getFormSubmission(e, passwordValue))}
+          disabled={disabled}
         />
       </form>
     </section>

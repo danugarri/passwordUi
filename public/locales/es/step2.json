@@ -18,7 +18,8 @@
       "3": "Introduce tu pista"
     },
     "errorHandler": {
-      "length": "Las contraseñas no coinciden"
+      "length": "Las contraseñas no coinciden",
+      "lengthRequested": "Min 8 caracteres - Max 24 caracteres"
     }
   }
 }

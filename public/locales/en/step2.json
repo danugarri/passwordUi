@@ -18,7 +18,8 @@
       "3": "Type your hint"
     },
     "errorHandler": {
-      "length": "Both password does not match"
+      "length": "Both password does not match",
+      "lengthRequested": "Min 8 characters - Max 24 characters"
     }
   }
 }
