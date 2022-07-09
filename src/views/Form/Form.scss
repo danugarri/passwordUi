@@ -26,10 +26,12 @@
 }
 .hint-section {
   position: absolute;
-  top: 65%;
+  top: 55%;
 }
 .password-section {
   position: absolute;
+  display: flex;
+  flex-direction: row;
   top: 35%;
 }
 
