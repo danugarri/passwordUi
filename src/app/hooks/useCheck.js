@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
 // REGEX pattern
+// Between 8- 24 characters, being upper or lower case or numbers between 0 and 9.
+//  At least 1 upperCase letter and a number
 export const regularExpression = /[A-Za-z0-9]{8,24}/;
 export const regexUpperCase = /[A-Z]+/;
 export const regexNumber = /[0-9]+/;
@@ -13,10 +15,9 @@ export const useCheck = (password, secondPassword) => {
       password === secondPassword && password.length === secondPassword.length;
     const passwordsNotEmpty = password !== '' && secondPassword !== '';
     // REGEX
+    const fullPattern = /[A-Za-z0-9]{8,24}[A-Z]+[0-9]+/;
     //checking expression
-    // Between 8- 24 character, being upper or lower case or numbers between 0 and 9:
-    // [A-Za-z0-9]{8,24}
-    const checkedExpression = regularExpression.test(password);
+    const checkedExpression = fullPattern.test(password);
     // Conditions
     passwordMatches && passwordsNotEmpty && checkedExpression
       ? setDisabled(false)
