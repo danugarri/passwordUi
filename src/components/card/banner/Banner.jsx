@@ -2,12 +2,15 @@ import React from 'react';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { selectStepAction } from '../../../app/actions/selectStepAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
+import './Banner.scss';
 
 export const Banner = () => {
   const dispatch = useDispatch();
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
   const step2 = useSelector((state) => state.stepsReducer.steps.step2);
   const step3 = useSelector((state) => state.stepsReducer.steps.step3);
+  const detailStyle1 = step2 ? 'passed' : 'detail';
+  const detailStyle2 = step3 ? 'passed' : 'detail';
 
   return (
     <section id='banner'>
@@ -16,7 +19,7 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className='detail'
+              className={detailStyle1}
               onClick={() => {
                 dispatch(selectStepAction(true, false, false));
               }}
@@ -31,7 +34,7 @@ export const Banner = () => {
         <div className='detail-container'>
           <div className='block-container'>
             <div
-              className='detail'
+              className={detailStyle2}
               onClick={() => {
                 dispatch(selectStepAction(false, true, false));
               }}
