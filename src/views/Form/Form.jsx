@@ -69,13 +69,13 @@ export const Form = () => {
             />
           </div>
           {/* error handler */}
-          <ErrorHandler
-            passwordLength={passwordLength}
-            secondPasswordLength={secondPasswordLength}
-            passwordValue={passwordValue}
-            secondPasswordValue={secondPasswordValue}
-          />
         </section>
+        <ErrorHandler
+          passwordLength={passwordLength}
+          secondPasswordLength={secondPasswordLength}
+          passwordValue={passwordValue}
+          secondPasswordValue={secondPasswordValue}
+        />
         {/* Hint input section*/}
         <section className='hint-section'>
           <label>{t('step2.descriptions.descr2')}</label>

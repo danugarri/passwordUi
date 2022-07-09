@@ -12,7 +12,7 @@ export const ErrorHandler = ({
 }) => {
   const { t } = useTranslation(['step2']);
   return (
-    <section>
+    <section className='error-container'>
       {/* When to display the error message */}
       {/* Password does not match */}
       {passwordLength !== secondPasswordLength || secondPasswordValue !== passwordValue ? (
