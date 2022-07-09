@@ -3,6 +3,7 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { selectStepAction } from '../../../app/actions/selectStepAction';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import './Banner.scss';
+import CheckIcon from '@material-ui/icons/Check';
 
 export const Banner = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,9 @@ export const Banner = () => {
   // Handling banner details style
   const detailStyle1 = step2 || step3 ? 'passed' : '';
   const detailStyle2 = step3 ? 'passed' : '';
+  // Handling user steps
+  const checkStyle1 = step2 || step3 ? <CheckIcon /> : 1;
+  const checkStyle2 = step3 ? <CheckIcon /> : 2;
 
   return (
     <section id='banner'>
@@ -25,7 +29,7 @@ export const Banner = () => {
                 dispatch(selectStepAction(true, false, false));
               }}
             >
-              1
+              {checkStyle1}
             </div>
             <div className={`linking-bar1 ${detailStyle1}`}></div>
           </div>
@@ -40,7 +44,7 @@ export const Banner = () => {
                 dispatch(selectStepAction(false, true, false));
               }}
             >
-              2
+              {checkStyle2}
             </div>
             <div className={`linking-bar1 ${detailStyle2}`}></div>
           </div>
@@ -49,14 +53,7 @@ export const Banner = () => {
         {/* step3 */}
         <div className='detail-container'>
           <div className='block-container'>
-            <div
-              className='detail3'
-              // onClick={() => {
-              //   dispatch(selectStepAction(false, false, true));
-              // }}
-            >
-              3
-            </div>
+            <div className='detail3'>3</div>
           </div>
           {step3 && <ArrowDropUpIcon className='arrow-icon3' />}
         </div>
