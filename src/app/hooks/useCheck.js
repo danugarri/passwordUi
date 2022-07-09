@@ -9,7 +9,9 @@ export const useCheck = (password, secondPassword) => {
     const passwordsNotEmpty = password !== '' && secondPassword !== '';
     // REGEX
     //checking expression
-    const regularExpression = /[a-z-0-9]+@([a-z])+\.[a-z]+/;
+    // Between 8- 24 character, being upper or lower case or numbers between 0 and 9:
+    // [A-Za-z0-9]{8,24}
+    const regularExpression = /[A-Za-z0-9]{8,24}$/;
     const checkedExpression = regularExpression.test(password);
     // Conditions
     passwordMatches && passwordsNotEmpty && checkedExpression
