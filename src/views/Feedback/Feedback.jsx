@@ -51,13 +51,13 @@ export const Feedback = ({ step3, responseOk }) => {
             fontSize='large'
             className='feedback-icon'
           />
-          <p className='header'>{t('step3.success.header')}</p>
+          <p className='header space'>{t('step3.success.header')}</p>
         </section>
       ) : (
         <section className='modal-content'>
           {/* error */}
           <ReportProblemOutlinedIcon color='error' fontSize='large' className='feedback-icon' />
-          <p className='header'>{t('step3.error.header')}</p>
+          <p className='header space'>{t('step3.error.header')}</p>
         </section>
       )}
       <Buttons step1={false} step2={true} step3={false} final={true} />
