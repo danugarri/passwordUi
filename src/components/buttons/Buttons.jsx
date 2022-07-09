@@ -36,7 +36,15 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, di
           <button
             type='button'
             className='cancel-button'
-            onClick={() => dispatch(selectStepAction(true, false, false))}
+            onClick={() => {
+              dispatch(selectStepAction(true, false, false));
+              // reset passwords Redux state
+              dispatch(passwordValueAction('', 'passwordValue'));
+              dispatch(lengthCounterAction(0, 'passwordLength'));
+              dispatch(lengthCounterAction(0, 'secondPasswordLength'));
+              dispatch(lengthCounterAction(0, 'hintLength'));
+              dispatch(passwordValueAction('', 'secondPasswordValue'));
+            }}
           >
             {t('app.buttons.cancel')}
           </button>
@@ -63,6 +71,7 @@ export const Buttons = ({ step1, step2, step3, submit, final, submitFunction, di
             dispatch(passwordValueAction('', 'passwordValue'));
             dispatch(lengthCounterAction(0, 'passwordLength'));
             dispatch(lengthCounterAction(0, 'secondPasswordLength'));
+            dispatch(lengthCounterAction(0, 'hintLength'));
             dispatch(passwordValueAction('', 'secondPasswordValue'));
           }}
         >
