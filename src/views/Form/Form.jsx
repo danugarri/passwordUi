@@ -90,7 +90,7 @@ export const Form = () => {
               placeholder={t('step2.placeholder.3')}
             />
           </div>
-          <label className='length-counter'>{hintLength}/255</label>
+          <p className='length-counter'>{hintLength}/255</p>
         </section>
         <Buttons
           step1={false}

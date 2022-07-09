@@ -1,5 +1,5 @@
 .hint-input {
-  width: 100%;
+  width: 42vw;
 }
 #inputs-container {
   display: flex;
@@ -8,7 +8,8 @@
   flex-wrap: wrap;
 }
 .length-counter {
-  text-align: right;
+  right: 2rem;
+  position: absolute;
 }
 .block {
   display: flex;
