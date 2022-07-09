@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 // REGEX pattern
 export const regularExpression = /[A-Za-z0-9]{8,24}/;
+export const regexUpperCase = /[A-Z]+/;
+export const regexNumber = /[0-9]+/;
 
 export const useCheck = (password, secondPassword) => {
   const [disabled, setDisabled] = useState();

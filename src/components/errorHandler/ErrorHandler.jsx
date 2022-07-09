@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './ErrorHandler.scss';
-import { regularExpression } from '../../app/hooks/useCheck';
+import { regularExpression, regexUpperCase, regexNumber } from '../../app/hooks/useCheck';
 
 export const ErrorHandler = ({
   passwordLength,
@@ -22,9 +22,13 @@ export const ErrorHandler = ({
       {!regularExpression.test(passwordValue) ? (
         <p className='alert'>{t('step2.errorHandler.lengthRequested')}</p>
       ) : null}
-      {/* Password does not pass the pattern requirements at least 1 number and an upper case letter*/}
-      {!regularExpression.test(passwordValue) ? (
-        <p className='alert'>{t('step2.errorHandler.pattern')}</p>
+      {/* Password does not pass the pattern requirements at least 1 an upper case letter*/}
+      {!regexUpperCase.test(passwordValue) ? (
+        <p className='alert'>{t('step2.errorHandler.pattern.upperCase')}</p>
+      ) : null}
+      {/* Password does not pass the pattern requirements at least 1 a NUMBER*/}
+      {!regexNumber.test(passwordValue) ? (
+        <p className='alert'>{t('step2.errorHandler.pattern.number')}</p>
       ) : null}
     </section>
   );
