@@ -14,8 +14,8 @@ export const Banner = () => {
   const detailStyle1 = step2 || step3 ? 'passed' : '';
   const detailStyle2 = step3 ? 'passed' : '';
   // Handling user steps
-  const checkStyle1 = step2 || step3 ? <CheckIcon /> : 1;
-  const checkStyle2 = step3 ? <CheckIcon /> : 2;
+  const checkStyle1 = step2 || step3 ? <CheckIcon className='check-icon' /> : 1;
+  const checkStyle2 = step3 ? <CheckIcon className='check-icon' /> : 2;
 
   return (
     <section id='banner'>
