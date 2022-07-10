@@ -1,5 +1,6 @@
 .hint-input {
   width: 42vw;
+  margin-top: 1rem;
 }
 #inputs-container {
   display: flex;
@@ -19,6 +20,7 @@
   display: flex;
   flex-direction: row;
   position: relative;
+  top: 1rem;
 }
 
 .info-icon {
