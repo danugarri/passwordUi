@@ -6,7 +6,7 @@
       "cancel": "Cancelar",
       "next": "Siguiente",
       "finish": {
-        "error": "Volver al Password Manager",
+        "error": "Volver al Password Manager >",
         "success": "Acceder"
       },
       "submit": "Enviar"

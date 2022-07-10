@@ -5,6 +5,10 @@
     },
     "error": {
       "header": "Ha habido un  error"
+    },
+    "subtitle": {
+      "error": "No hemos podido modificar tu contraseña maestra. Inténtalo más tarde",
+      "success": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget facilisis mauris."
     }
   }
 }

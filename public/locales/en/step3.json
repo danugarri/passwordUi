@@ -5,6 +5,10 @@
     },
     "error": {
       "header": "An error has been occurred"
+    },
+    "subtitle": {
+      "error": "We have not been able to modify your master password. Try it later",
+      "success": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget facilisis mauris."
     }
   }
 }

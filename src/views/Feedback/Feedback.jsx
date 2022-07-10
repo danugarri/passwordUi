@@ -18,7 +18,7 @@ export const Feedback = ({ step3, responseOk }) => {
   const useStyles = makeStyles((theme) => ({
     paper: {
       position: 'absolute',
-      width: 'fit-content',
+      width: '30rem',
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
@@ -45,22 +45,36 @@ export const Feedback = ({ step3, responseOk }) => {
     <div style={modalStyle} className={classes.paper}>
       {/* success */}
       {responseOk === 200 ? (
-        <section className='modal-content'>
-          <CheckCircleOutlineIcon
-            style={{ color: 'rgb(20, 216, 20)' }}
-            fontSize='large'
-            className='feedback-icon'
-          />
-          <p className='header space'>{t('step3.success.header')}</p>
-        </section>
+        <main>
+          <section className='modal-header'>
+            <CheckCircleOutlineIcon
+              style={{ color: 'rgb(20, 216, 20)', fontSize: 50 }}
+              className='feedback-icon'
+            />
+            <section className='modal-text'>
+              <p className='modal-text-header  space'>{t('step3.success.header')}</p>
+              <p className='modal-subtitle space'>{t('step3.subtitle.success')}</p>
+            </section>
+          </section>
+          <Buttons step1={false} step2={true} step3={false} final={true} />
+        </main>
       ) : (
-        <section className='modal-content'>
-          {/* error */}
-          <ReportProblemOutlinedIcon color='error' fontSize='large' className='feedback-icon' />
-          <p className='header space'>{t('step3.error.header')}</p>
-        </section>
+        <main>
+          <section className='modal-header'>
+            {/* error */}
+            <ReportProblemOutlinedIcon
+              color='error'
+              style={{ fontSize: 50 }}
+              className='feedback-icon'
+            />
+            <section className='modal-text'>
+              <p className='modal-text-header  space'>{t('step3.error.header')}</p>
+              <p className='modal-subtitle space'>{t('step3.subtitle.error')}</p>
+            </section>
+          </section>
+          <Buttons step1={false} step2={true} step3={false} final={true} />
+        </main>
       )}
-      <Buttons step1={false} step2={true} step3={false} final={true} />
       <Feedback />
     </div>
   );
