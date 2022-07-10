@@ -1,22 +1,5 @@
 @import 'styles/base';
 
-.App {
-  margin: 0 auto;
-  &-header {
-    &-logo {
-      max-width: 80px;
-    }
-  }
-  &-content {
-    padding: 1rem 4rem;
-    h3 {
-      color: $primary-color;
-    }
-    p {
-      color: $secondary-color;
-    }
-  }
-}
 // Shared
 figure {
   margin: 0 auto;
@@ -79,10 +62,6 @@ article {
   cursor: pointer;
   font-weight: bold;
 }
-// .access-button {
-//   position: relative;
-//   left: 80%;
-// }
 
 // inputs
 input {
@@ -98,22 +77,6 @@ input {
 
 // Media queries
 @media only screen and (min-width: 300px) and (max-width: 860px) {
-  .App {
-    &-header {
-      &-logo {
-        max-width: 10px;
-      }
-    }
-    &-content {
-      padding: 1rem 4rem;
-      h3 {
-        color: $primary-color;
-      }
-      p {
-        color: $secondary-color;
-      }
-    }
-  }
   // Shared
 
   .steps-container {

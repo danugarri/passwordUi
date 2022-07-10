@@ -18,7 +18,7 @@ const App = () => {
   const loading = useSelector((state) => state.submitFormReducer.loading);
 
   return (
-    <div className='App'>
+    <div>
       <Header />
       {/* iF loading not to render */}
       {!loading && (
