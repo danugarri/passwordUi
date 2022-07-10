@@ -14,12 +14,12 @@ export const SelectLanguage = () => {
       <p id='greeting'>{t('app.greeting')}</p>
       <div id='language'>
         <label htmlFor='languageSelected' id='language-label'>
-          {t('app.language')}:
+          {t('app.language.title')}:
         </label>
         <select name='languageSelected' onChange={changeCuurentLanguage} value={i18n.language}>
-          {Object.values(supportedLanguages).map((option, index) => (
+          {Object.keys(supportedLanguages).map((option, index) => (
             <option key={index} value={option}>
-              {option}
+              {t(`app.language.${option}`)}
             </option>
           ))}
         </select>

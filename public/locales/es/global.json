@@ -1,7 +1,11 @@
 {
   "app": {
     "greeting": "Bienvenido a Open Bank",
-    "language": "Idioma",
+    "language": {
+      "title": "Idioma",
+      "en": "Inglés",
+      "es": "Español"
+    },
     "buttons": {
       "cancel": "Cancelar",
       "next": "Siguiente",
