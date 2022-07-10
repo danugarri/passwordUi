@@ -19,7 +19,7 @@ export const Feedback = ({ step3, responseOk }) => {
     paper: {
       position: 'absolute',
       width: 'fit-content',
-      height: '10rem',
+      height: '25%',
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],

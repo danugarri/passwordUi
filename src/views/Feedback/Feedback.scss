@@ -1,6 +1,7 @@
 .modal-header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .feedback-icon {
   position: relative;
@@ -14,9 +15,18 @@
   color: black;
   font-weight: bold;
   font-size: 1.25rem;
-  line-height: 1px;
+  line-height: 0.0625rem;
 }
 .modal-subtitle {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 860px) {
+  .modal-text-header {
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 0.0625rem;
+  }
 }
