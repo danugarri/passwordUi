@@ -44,7 +44,7 @@ export const Feedback = ({ step3, responseOk }) => {
   const body = (
     <div style={modalStyle} className={classes.paper}>
       {/* success */}
-      {responseOk ? (
+      {responseOk === 200 ? (
         <section className='modal-content'>
           <CheckCircleOutlineIcon
             style={{ color: 'rgb(20, 216, 20)' }}

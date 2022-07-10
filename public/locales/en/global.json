@@ -5,7 +5,10 @@
     "buttons": {
       "cancel": "Cancel",
       "next": "Next",
-      "finish": "Close",
+      "finish": {
+        "error": "Return to the Password Manager",
+        "success": "Access"
+      },
       "submit": "Submit"
     }
   },

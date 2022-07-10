@@ -38,10 +38,9 @@ export const submitFormSlice = createSlice({
           loading: false,
         };
       })
-      .addMatcher(isRejected(getFormSubmission), (state, action) => {
+      .addMatcher(isRejected(getFormSubmission), () => {
         return {
-          ...state,
-          status: action.payload,
+          status: 401,
           loading: false,
           error: 'Promise rejected, inserted pruebaKO123',
         };

@@ -13,13 +13,13 @@ const App = () => {
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
   const step2 = useSelector((state) => state.stepsReducer.steps.step2);
   const step3 = useSelector((state) => state.stepsReducer.steps.step3);
+  // Type number
   const responseOk = useSelector((state) => state.submitFormReducer.status);
   const loading = useSelector((state) => state.submitFormReducer.loading);
 
   return (
     <div className='App'>
       <Header />
-
       {/* iF loading not to render */}
       {!loading && (
         <Card>

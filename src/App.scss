@@ -69,6 +69,15 @@ article {
   cursor: not-allowed;
   color: $white;
 }
+.finish-button {
+  border-style: none;
+  position: relative;
+  left: 12rem;
+  color: $primary-color;
+  top: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
 
 // inputs
 input {

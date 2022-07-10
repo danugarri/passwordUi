@@ -1,24 +1,16 @@
 import React from 'react';
 import { selectStepAction } from '../../app/actions/selectStepAction';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
-import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 
-export const Buttons = ({
-  step1,
-  step2,
-  step3,
-  submit,
-  final,
-  submitFunction,
-  disabled,
-  nextButtonStyle,
-}) => {
+export const Buttons = (props) => {
+  const { step1, step2, step3, submit, final, submitFunction, disabled, nextButtonStyle } = props;
   const { t } = useTranslation(['global']);
   const dispatch = useDispatch();
+  const submitStatus = useSelector((state) => state.submitFormReducer.status);
 
   return (
     <>
@@ -73,7 +65,7 @@ export const Buttons = ({
       {/* step3 */}
       {final && !submit && (
         <button
-          className='next-button'
+          className='finish-button'
           onClick={() => {
             dispatch(selectStepAction(true, false, false));
             // reset passwords and hint Redux state
@@ -84,7 +76,8 @@ export const Buttons = ({
             dispatch(passwordValueAction('', 'secondPasswordValue'));
           }}
         >
-          {t('app.buttons.finish')}
+          {/* error  - success*/}
+          {submitStatus === 401 ? t('app.buttons.finish.error') : t('app.buttons.finish.success')}
         </button>
       )}
     </>
