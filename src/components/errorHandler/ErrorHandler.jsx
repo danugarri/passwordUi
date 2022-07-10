@@ -11,6 +11,7 @@ export const ErrorHandler = ({
   passwordValue,
 }) => {
   const { t } = useTranslation(['step2']);
+
   return (
     <section className='error-container'>
       {/* When to display the error message */}

@@ -1,4 +1,10 @@
-import { createAsyncThunk, createSlice, isFulfilled, isPending } from '@reduxjs/toolkit';
+import {
+  createAsyncThunk,
+  createSlice,
+  isFulfilled,
+  isPending,
+  isRejected,
+} from '@reduxjs/toolkit';
 import { submitForm } from '../../../services/api';
 
 const initialState = {
@@ -6,8 +12,8 @@ const initialState = {
   loading: false,
 };
 
-export const getFormSubmission = createAsyncThunk('[FORM]', async (e, passwordValue) => {
-  const response = await submitForm(e, passwordValue);
+export const getFormSubmission = createAsyncThunk('[FORM]', async (passwordValue) => {
+  const response = await submitForm(passwordValue);
 
   return response.status;
 });
@@ -25,6 +31,13 @@ export const submitFormSlice = createSlice({
         };
       })
       .addMatcher(isFulfilled(getFormSubmission), (state, action) => {
+        return {
+          ...state,
+          status: action.payload,
+          loading: false,
+        };
+      })
+      .addMatcher(isRejected(getFormSubmission), (state, action) => {
         return {
           ...state,
           status: action.payload,

@@ -102,7 +102,7 @@ export const Form = () => {
           step2={false}
           step3={true}
           submit={true}
-          submitFunction={(e) => dispatch(getFormSubmission(e, passwordValue))}
+          submitFunction={(e) => dispatch(getFormSubmission(passwordValue))}
           disabled={disabled}
           nextButtonStyle={nextButtonStyle}
         />
