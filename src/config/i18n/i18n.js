@@ -5,7 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 export const supportedLanguages = {
   es: 'Español',
-  en: 'EInglés',
+  en: 'Inglés',
 };
 i18n
   .use(initReactI18next)

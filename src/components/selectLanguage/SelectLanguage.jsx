@@ -17,7 +17,7 @@ export const SelectLanguage = () => {
           {t('app.language')}:
         </label>
         <select name='languageSelected' onChange={changeCuurentLanguage} value={i18n.language}>
-          {Object.keys(supportedLanguages).map((option, index) => (
+          {Object.values(supportedLanguages).map((option, index) => (
             <option key={index} value={option}>
               {option}
             </option>
