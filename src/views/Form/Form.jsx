@@ -78,7 +78,9 @@ export const Form = () => {
         />
         {/* Hint input section*/}
         <section className='hint-section'>
-          <label>{t('step2.descriptions.descr2')}</label>
+          <label style={{ top: '1rem', position: 'relative' }}>
+            {t('step2.descriptions.descr2')}
+          </label>
           <div className='block'>
             <div className='hint-info-container'>
               <label className='header' htmlFor='hint'>

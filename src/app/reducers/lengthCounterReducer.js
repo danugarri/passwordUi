@@ -5,6 +5,7 @@ const initialState = {
   passwordLength: 0,
   secondPasswordLength: 0,
 };
+// Reducer
 export const lengthCounterReducer = (state = initialState, action) => {
   if (action.type === types.hintLength) {
     return {

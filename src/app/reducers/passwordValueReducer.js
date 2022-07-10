@@ -4,6 +4,7 @@ const initialState = {
   password: '',
   secondPassword: '',
 };
+// Reducer
 export const passwordValueReducer = (state = initialState, action) => {
   if (action.type === types.passwordValue) {
     return {

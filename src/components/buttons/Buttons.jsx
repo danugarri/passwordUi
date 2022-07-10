@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
+import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 
 export const Buttons = ({
   step1,
@@ -30,7 +31,6 @@ export const Buttons = ({
           >
             {t('app.buttons.cancel')}
           </button>
-
           <button
             className='next-button'
             onClick={() => dispatch(selectStepAction(step1, step2, step3))}
@@ -76,7 +76,7 @@ export const Buttons = ({
           className='next-button'
           onClick={() => {
             dispatch(selectStepAction(true, false, false));
-            // reset passwords Redux state
+            // reset passwords and hint Redux state
             dispatch(passwordValueAction('', 'passwordValue'));
             dispatch(lengthCounterAction(0, 'passwordLength'));
             dispatch(lengthCounterAction(0, 'secondPasswordLength'));

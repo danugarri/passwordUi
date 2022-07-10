@@ -10,14 +10,15 @@ import { submitForm } from '../../../services/api';
 const initialState = {
   status: null,
   loading: false,
+  error: null,
 };
-
+//  Asynchronous call to the submitForm mock
 export const getFormSubmission = createAsyncThunk('[FORM]', async (passwordValue) => {
   const response = await submitForm(passwordValue);
 
   return response.status;
 });
-
+// Slice to handle promise
 export const submitFormSlice = createSlice({
   name: 'form',
   initialState,
@@ -42,6 +43,7 @@ export const submitFormSlice = createSlice({
           ...state,
           status: action.payload,
           loading: false,
+          error: 'Promise rejected, inserted pruebaKO123',
         };
       });
   },
