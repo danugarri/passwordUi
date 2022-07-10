@@ -71,14 +71,18 @@ article {
 }
 .finish-button {
   border-style: none;
-
-  // position: relative;
-  // left: 2rem;
+  background-color: $white;
+  position: relative;
+  left: 40%;
   color: $primary-color;
-  // top: 1rem;
+  top: 3rem;
   cursor: pointer;
   font-weight: bold;
 }
+// .access-button {
+//   position: relative;
+//   left: 80%;
+// }
 
 // inputs
 input {

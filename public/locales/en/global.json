@@ -7,7 +7,7 @@
       "next": "Next",
       "finish": {
         "error": "Return to the Password Manager >",
-        "success": "Access"
+        "success": "Access >"
       },
       "submit": "Submit"
     }
