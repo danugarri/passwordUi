@@ -11,7 +11,7 @@ export const ErrorHandler = ({
   passwordValue,
 }) => {
   const { t } = useTranslation(['step2']);
-
+  const typedInput = passwordLength !== 0 && secondPasswordLength !== 0;
   return (
     <section className='error-container'>
       {/* When to display the error message */}
@@ -20,15 +20,15 @@ export const ErrorHandler = ({
         <p className='alert'>{t('step2.errorHandler.length')}</p>
       ) : null}
       {/* Password does not pass the length requirements*/}
-      {!regularExpression.test(passwordValue) ? (
+      {typedInput && !regularExpression.test(passwordValue) ? (
         <p className='alert'>{t('step2.errorHandler.lengthRequested')}</p>
       ) : null}
       {/* Password does not pass the pattern requirements at least 1 an upper case letter*/}
-      {!regexUpperCase.test(passwordValue) ? (
+      {typedInput && !regexUpperCase.test(passwordValue) ? (
         <p className='alert'>{t('step2.errorHandler.pattern.upperCase')}</p>
       ) : null}
       {/* Password does not pass the pattern requirements at least 1 a NUMBER*/}
-      {!regexNumber.test(passwordValue) ? (
+      {typedInput && !regexNumber.test(passwordValue) ? (
         <p className='alert'>{t('step2.errorHandler.pattern.number')}</p>
       ) : null}
     </section>
