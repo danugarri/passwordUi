@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './Form.scss';
 import { Buttons } from '../../components/buttons/Buttons';
 import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';

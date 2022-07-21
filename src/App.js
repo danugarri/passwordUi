@@ -5,7 +5,7 @@ import { Feedback } from './views/Feedback/Feedback';
 import './App.scss';
 import { Header } from './components/header/Header';
 import { Card } from './components/card/Card';
-import { useSelector } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux';
 import Spinner from './components/spinner/Spinner';
 
 const App = () => {

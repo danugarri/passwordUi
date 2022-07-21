@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { selectStepAction } from '../../../app/actions/selectStepAction';
-import { useDispatch } from 'react-redux/es/exports';
+import { useDispatch } from 'react-redux';
 import './Banner.scss';
 import { useBannerStyles } from '../../../app/hooks/useBannerStyles';
 

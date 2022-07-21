@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckIcon from '@material-ui/icons/Check';
-import { useSelector } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux';
 
 export const useBannerStyles = () => {
   const step1 = useSelector((state) => state.stepsReducer.steps.step1);
