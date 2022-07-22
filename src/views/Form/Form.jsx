@@ -6,9 +6,10 @@ import { lengthCounterAction } from '../../app/actions/lengthCounterAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
 import { useCheck } from '../../app/hooks/useCheck';
+import { HintSection } from './hintSection/HintSection';
+import { PasswordSection } from './passwordSection/PasswordSection';
 
 export const Form = () => {
   const { t } = useTranslation(['step2']);
@@ -38,38 +39,10 @@ export const Form = () => {
     <section className='content-container'>
       <p className='password-manager'>{t('step2.headers.main')}</p>
       <label>{t('step2.descriptions.descr1')}</label>
-      {/*  Passwprd inputs section */}
       <form id='inputs-container' onSubmit={(e) => dispatch(getFormSubmission(e, passwordValue))}>
-        <section className='password-section'>
-          <div className='block'>
-            <label className='header' htmlFor='pass'>
-              {t('step2.headers.password.left')}
-            </label>
-            <input
-              name='pass'
-              minLength='8'
-              maxLength='24'
-              type='password'
-              onChange={(e) => handleInputs(e, 'passwordValue', 'passwordLength')}
-              placeholder={t('step2.placeholder.1')}
-            />
-          </div>
-          <div className='block'>
-            <label className='header' htmlFor='repass'>
-              {t('step2.headers.password.right')}
-            </label>
-            {/* input */}
-            <input
-              name='repass'
-              minLength='8'
-              maxLength='24'
-              type='password'
-              onChange={(e) => handleInputs(e, 'secondPasswordValue', 'secondPasswordLength')}
-              placeholder={t('step2.placeholder.2')}
-            />
-          </div>
-          {/* error handler */}
-        </section>
+        {/*  Passwprd inputs section */}
+        <PasswordSection handleInputs={handleInputs} />
+        {/* error handler */}
         <ErrorHandler
           passwordLength={passwordLength}
           secondPasswordLength={secondPasswordLength}
@@ -77,28 +50,7 @@ export const Form = () => {
           secondPasswordValue={secondPasswordValue}
         />
         {/* Hint input section*/}
-        <section className='hint-section'>
-          <label style={{ top: '1rem', position: 'relative' }}>
-            {t('step2.descriptions.descr2')}
-          </label>
-          <div className='block'>
-            <div className='hint-info-container'>
-              <label className='header' htmlFor='hint'>
-                {t('step2.headers.hint')}
-              </label>
-              <InfoOutlinedIcon color='primary' className='info-icon' />
-            </div>
-            <input
-              name='hint'
-              className='hint-input'
-              type='text'
-              maxLength='255'
-              onChange={(e) => handleInputs(e, null, 'hintLength')}
-              placeholder={t('step2.placeholder.3')}
-            />
-          </div>
-          <p className='length-counter'>{hintLength}/255</p>
-        </section>
+        <HintSection handleInputs={handleInputs} hintLength={hintLength} />
         <Buttons
           step1={false}
           step2={false}
