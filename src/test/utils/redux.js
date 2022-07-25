@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { selectStepReducer } from '../../app/reducers/selectStepReducer';
+import { selectStepReducer } from '../../app/reducers/selectStep/selectStepReducer';
 import { lengthCounterReducer } from '../../app/reducers/lengthCounter/lengthCounterReducer';
 import { passwordValueReducer } from '../../app/reducers/passwordValue/passwordValueReducer';
 import submitFormReducer from '../../app/reducers/mock/getFormSubmissionSlice';
