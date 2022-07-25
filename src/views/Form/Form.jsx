@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ErrorHandler } from '../../components/errorHandler/ErrorHandler';
 import { passwordValueAction } from '../../app/actions/passwordValueAction';
 import { getFormSubmission } from '../../app/reducers/mock/getFormSubmissionSlice';
-import { useCheck } from '../../app/hooks/useCheck';
+import { useCheck } from '../../app/hooks/useCheck/useCheck';
 import { HintSection } from './hintSection/HintSection';
 import { PasswordSection } from './passwordSection/PasswordSection';
 

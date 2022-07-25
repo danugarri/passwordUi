@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './ErrorHandler.scss';
-import { regularExpression, regexUpperCase, regexNumber } from '../../app/hooks/useCheck';
+import { regularExpression, regexUpperCase, regexNumber } from '../../app/hooks/useCheck/useCheck';
 
 export const ErrorHandler = ({
   passwordLength,
