@@ -3,7 +3,7 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import { selectStepAction } from '../../../app/actions/selectStepAction';
 import { useDispatch } from 'react-redux';
 import './Banner.scss';
-import { useBannerStyles } from '../../../app/hooks/useBannerStyles';
+import { useBannerStyles } from '../../../app/hooks/useBannerStyles/useBannerStyles';
 
 export const Banner = () => {
   const dispatch = useDispatch();
