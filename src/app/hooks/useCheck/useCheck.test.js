@@ -1,4 +1,4 @@
-import { renderHook } from 'react-hooks-testing-library';
+import { renderHook } from '@testing-library/react-hooks';
 import { useEffect, useState } from 'react';
 import { useCheck } from './useCheck';
 
